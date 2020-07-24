@@ -1,0 +1,46 @@
+<body class="auth">
+  <div class="container">
+
+      <h1 class="page-header text-center"> Sign up </h1>  
+        <form method="POST" autocomplete="off" spellcheck="false">
+          <div class="form-group">
+            <input type="text" class="form-control" value="<%= enteredUsername ? enteredUsername : '' %>" name ="username" id="username" placeholder=" ">
+            <label for="username" class="floating-label">
+              <span class="floating-label-content"> Username </span>
+            </label>
+
+            <% if (usernameError.length > 0) { %>
+              <div class="account-error" data-type-error="username">
+                <%= usernameError %>
+              </div>
+              <script>
+                $('#username').css('border-bottom-color', 'red');
+              </script>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="password" placeholder=" ">
+            <label for="password" class="floating-label">
+              <span class="floating-label-content"> Password </span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder=" ">
+            <label for="cpassword" class="floating-label">
+              <span class="floating-label-content"> Confirm Password </span>
+            </label>
+          </div>
+
+          <div class="form-group button-container">
+            <button type="submit" class="btn btn-primary text-center bg-transparent border-0"> Sign up </button>
+          </div>
+
+          <p>
+            <small> Already have an account? <a href="login"> Login. </a> </small>
+          </p>
+        </form>
+    </div>
+    <script type="text/javascript" src="auth.js"> </script>
+</body>

@@ -1,0 +1,54 @@
+<body class="auth">
+  <div class="container">
+
+    <% if (successMessage.length > 0) { %>
+    <div class="alert alert-success">
+      <%= successMessage %>
+    </div>
+    <% } %> 
+
+      <h1 class="page-header text-center"> Login </h1>  
+        <form method="POST" autocomplete="off" spellcheck="false">
+          <div class = "form-group">
+            <input type="text" class="form-control" value="<%= enteredUsername ? enteredUsername : '' %>" name="username" id="username" placeholder=" "> 
+            <label for="username" class="floating-label">
+              <span class="floating-label-content"> Username </span>
+            </label>
+
+            <% if (usernameError.length > 0) { %>
+              <div class="account-error" data-type-error="username">
+                <%= usernameError %>
+              </div>
+              <script>
+                $('#username').css('border-bottom-color', 'red');
+              </script>
+            <% } %> 
+
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="password" placeholder=" ">
+            <label for="password" class="floating-label">
+              <span class="floating-label-content"> Password </span>
+            </label>
+
+            <% if (passwordError.length > 0) { %>
+              <div class="account-error" data-type-error="password">
+                <%= passwordError %>
+              </div>
+              <script>
+                $('#password').css('border-bottom-color', 'red');
+              </script>
+            <% } %>
+          </div>
+
+          <div class="form-group button-container">
+            <button type="submit" class="btn btn-primary text-center bg-transparent border-0"> Login </button>
+          </div>
+        </form>
+        <p>
+          <small> Don't have an account? <a href="signup"> Create an account. </a> </small>
+        </p>
+  </div>
+  <script type="text/javascript" src="auth.js"> </script>
+</body>

@@ -1,0 +1,106 @@
+<body class ="chatroom">
+	<nav class="navbar navbar-expand-sm navbar-default">
+		<a class="navbar-brand ellipses" href="/room" id="username"><%=username%></a>
+
+		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="icon-bar top-bar"></span>
+			<span class="icon-bar middle-bar"></span>
+			<span class="icon-bar bottom-bar"></span>				
+		</button>
+
+		<div class="collapse navbar-collapse" id="myNav">
+			<ul class = "navbar-nav ml-auto">
+				<li class="nav-item search-minimize">
+					<i class="fa fa-search" aria-hidden="true"></i>			
+				</li>
+
+				<li class="nav-item search-container">
+					<div class="d-flex align-items-center" id="search-bar">
+
+
+						<div class="searchbox-container">
+							<span class="search-tag no-select st1">users:</span>
+							<span class="search-tag no-select st2">messages:</span>
+							<input class="form-control form-control-sm" id="search" type="search" placeholder="Search" aria-label="Search" autocomplete="off">	
+						</div>
+
+						<div class="search-icon-container">
+							<i class="fa fa-search" aria-hidden="true"></i>			
+						</div>
+
+
+				
+				
+						<div class="search-wrapper">
+							<div class="search-dropdown d-menu">
+								<div class="search-options">
+									<small class="search-options-header"> SEARCH OPTIONS</small>
+									<div class="search-option so1"><b>Users:</b> Search for users</div>
+									<div class="search-option so2"><b>Messages:</b> Search for messages</div>
+								</div>
+							</div>
+						</div>	
+							
+					</div>
+
+					
+				</li>
+
+				<li class="nav-item dropdown" id="dropdown">
+							<div class="nav-container" id="navbarDropdown" role="menu" data-toggle="dropdown">
+								<div class="m-icons-wrapper" data-toggle="tooltip" data-placement="bottom" title="Messages">
+									<span class="nav-message-icon"></span>
+								</div>
+							</div>	
+						
+					  	<div class="dropdown-menu d-menu"></div>
+				</li>
+
+
+				<li class = "nav-item">
+					<a href="/logout" class="nav-link" id="logout"> Logout </a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class = "container">
+		<div class = "chat-container">
+
+			<div class="scroll-bottom">
+				<i class="fa fa-arrow-circle-o-down fa-3x" aria-hidden="true"></i>
+			</div>
+
+
+			<div class="overlay d-flex justify-content-center align-items-center">	
+				<div class="spinner-border" role="status">
+ 					<span class="sr-only">Loading...</span>
+				</div>
+			</div>
+				
+			<div class = "online-users">
+				<h6>Online</h6>		
+				<div class = "users"> </div>
+			</div>
+
+			
+			<h6 class="room-name ellipses"></h6>
+
+			<div class="chat" id="chat-messages"></div>		
+					
+
+			<div class = "input-fields-container">
+				<div class = "input-fields-wrapper">
+					<textarea type="text" id="user-input" maxlength="200"></textarea>
+					<div class="button-container">
+						<div class = "button-wrapper">
+							<span id="send-message" data-toggle="tooltip" title="Send message"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type = "text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type = "text/javascript" src="/client.js"> </script>
+</body>
