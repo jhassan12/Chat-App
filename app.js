@@ -13,6 +13,8 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const compression = require('compression');
 
+console.log('hello');
+
 const keys = require('./config/keys');
 
 const app = express();
