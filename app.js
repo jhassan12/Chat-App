@@ -12,12 +12,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const compression = require('compression');
-
-console.log('hello');
-
+const cors = require('cors')
 const keys = require('./config/keys');
 
 const app = express();
+app.use(cors());
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -34,7 +33,6 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 	.then(() => console.log('Mongodb connected!'))
 	.catch((error) => console.log(error));
 
-    
 
 // Views
 app.set('views', path.join(__dirname, '/views'));
