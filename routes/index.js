@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-var path = require('path');
+const path = require('path');
 
 const conversationExists = require('../socket.js').conversationExists;
 const conversationHasUser = require('../socket.js').conversationHasUser;

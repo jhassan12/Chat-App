@@ -1,10 +1,6 @@
-console.log(1);
-
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
-console.log(2);
 
 const cookieParser = require('cookie-parser')
 const path = require('path');
@@ -19,10 +15,7 @@ const compression = require('compression');
 const cors = require('cors')
 const keys = require('./config/keys');
 
-console.log(3);
-
 const app = express();
-app.use(cors());
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -39,8 +32,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 	.then(() => console.log('Mongodb connected!'))
 	.catch((error) => console.log(error));
 
-
-console.log(5);
+app.use(cors());
 
 // Views
 app.set('views', path.join(__dirname, '/views'));
@@ -78,6 +70,7 @@ io.use(function(socket, next){
 app.use('/', router);
 
 app.use(function (req, res) {
+    res.status(405).sendFile('error.html', {root: path.join(__dirname, 'views')});
     res.status(404).sendFile('error.html', {root: path.join(__dirname, 'views')});
 });
 
