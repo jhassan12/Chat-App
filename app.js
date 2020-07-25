@@ -70,7 +70,6 @@ io.use(function(socket, next){
 app.use('/', router);
 
 app.use(function (req, res) {
-    res.status(405).sendFile('error.html', {root: path.join(__dirname, 'views')});
     res.status(404).sendFile('error.html', {root: path.join(__dirname, 'views')});
 });
 
