@@ -16,13 +16,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const compression = require('compression');
-const cors = require('cors')
-const keys = require('./config/keys');
+const cors = require('cors');
 
 console.log(3);
 
 const app = express();
-app.use(cors());
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -48,6 +46,8 @@ console.log(5);
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
+
+app.use(cors());
 
 // Layouts
 app.use(expressLayouts);
