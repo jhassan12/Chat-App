@@ -277,7 +277,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .x-icon {
-	background: url('images/x-icon.png');
+	background: url('./public/images/x-icon.png');
 	background-repeat: no-repeat;
 	background-size: 15px;
 	background-position: 50%, 50%;
