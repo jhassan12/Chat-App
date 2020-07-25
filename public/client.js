@@ -1,4 +1,4 @@
-const socket = io.connect(window.location.hostname);
+const socket = io.connect("http://localhost:5000");
 
 const chatContainer = document.querySelector('.chat');
 const onlineUsersContainer = document.querySelector('.users');
