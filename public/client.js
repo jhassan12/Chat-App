@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://aqueous-reaches-86143.herokuapp.com");
 
 const chatContainer = document.querySelector('.chat');
 const onlineUsersContainer = document.querySelector('.users');

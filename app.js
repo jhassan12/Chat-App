@@ -1,10 +1,6 @@
-console.log(1);
-
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
-console.log(2);
 
 const cookieParser = require('cookie-parser')
 const path = require('path');
@@ -17,8 +13,6 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const compression = require('compression');
 const cors = require('cors');
-
-console.log(3);
 
 const app = express();
 const http = require('http').Server(app);
@@ -39,8 +33,6 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 	.then(() => console.log('Mongodb connected!'))
 	.catch((error) => console.log(error));
 
-
-console.log(5);
 
 // Views
 app.set('views', path.join(__dirname, '/views'));
