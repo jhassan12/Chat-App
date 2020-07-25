@@ -277,7 +277,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .x-icon {
-	background: url('/images/x-icon.png');
+	background: url('/Images/x-icon.png');
 	background-repeat: no-repeat;
 	background-size: 15px;
 	background-position: 50%, 50%;
@@ -552,7 +552,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	display: block;
 	width: 40px;
 	height: 40px;
-	background: url('/images/nav-message-icon.png');
+	background: url('/Images/nav-message-icon.png');
 	background-repeat: no-repeat;
 	background-size: 50px;
 	background-position: 50%, 50%;
@@ -560,7 +560,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .nav-container:hover .nav-message-icon {
-	background: url('./images/nav-message-icon-gold.png');
+	background: url('/Images/nav-message-icon-gold.png');
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
 	background-size: 50px;
@@ -641,7 +641,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom #send-message {
 	position: absolute;
 	display: block;
-	background: url('images/send-icon-outline.png');
+	background: url('/Images/send-icon-outline.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
@@ -652,7 +652,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom #send-message:hover {
-	background: url('images/send-icon.png');
+	background: url('/Images/send-icon.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
@@ -885,7 +885,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom .redirect-icon {
 	display: inline-block;
-	background: url('images/left-arrow-outline.png');
+	background: url('/Images/left-arrow-outline.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 50%, 50%;
@@ -898,7 +898,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .redirect-icon:hover {
-	background: url('images/left-arrow.png');
+	background: url('/Images/left-arrow.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 50%, 50%;
