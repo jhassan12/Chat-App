@@ -1,6 +1,10 @@
+console.log(1);
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
+
+console.log(2);
 
 const cookieParser = require('cookie-parser')
 const path = require('path');
@@ -15,6 +19,8 @@ const compression = require('compression');
 const cors = require('cors')
 const keys = require('./config/keys');
 
+console.log(3);
+
 const app = express();
 app.use(cors());
 const http = require('http').Server(app);
@@ -26,6 +32,8 @@ const router = require('./routes/index');
 
 const PORT = process.env.PORT || 5000;
 
+console.log(process.env.CONNECTION_STRING);
+
 // Connect to the database
 mongoose.connect(process.env.CONNECTION_STRING, {
  useNewUrlParser : true,
@@ -33,6 +41,8 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 	.then(() => console.log('Mongodb connected!'))
 	.catch((error) => console.log(error));
 
+
+console.log(5);
 
 // Views
 app.set('views', path.join(__dirname, '/views'));
