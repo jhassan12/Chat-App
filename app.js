@@ -16,11 +16,13 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const compression = require('compression');
-const cors = require('cors');
+const cors = require('cors')
+const keys = require('./config/keys');
 
 console.log(3);
 
 const app = express();
+app.use(cors());
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -29,10 +31,6 @@ require('./socket.js').handleConnections(io);
 const router = require('./routes/index');
 
 const PORT = process.env.PORT || 5000;
-
-console.log(process.env.CONNECTION_STRING);
-
-app.use(cors());
 
 // Connect to the database
 mongoose.connect(process.env.CONNECTION_STRING, {
