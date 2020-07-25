@@ -277,7 +277,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .x-icon {
-	background: url('/public/images/x-icon.png');
+	background: url('/images/x-icon.png');
 	background-repeat: no-repeat;
 	background-size: 15px;
 	background-position: 50%, 50%;
@@ -552,7 +552,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	display: block;
 	width: 40px;
 	height: 40px;
-	background: url('images/nav-message-icon.png');
+	background: url('/images/nav-message-icon.png');
 	background-repeat: no-repeat;
 	background-size: 50px;
 	background-position: 50%, 50%;
@@ -560,7 +560,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .nav-container:hover .nav-message-icon {
-	background: url('images/nav-message-icon-gold.png');
+	background: url('./images/nav-message-icon-gold.png');
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
 	background-size: 50px;
