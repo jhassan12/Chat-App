@@ -12,8 +12,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
 const compression = require('compression');
-const cors = require('cors')
-const keys = require('./config/keys');
+const cors = require('cors');
 
 const app = express();
 const http = require('http').Server(app);
