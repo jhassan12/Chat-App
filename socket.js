@@ -134,6 +134,9 @@ async function updateConversationsOfUser(username, conversationID) {
 				}
 
 				const recentMessage = await createRecentMessage(username, conversationID);
+
+				console.log(recentMessage);
+
 				io.sockets.in(username).emit('add-recent-message', recentMessage);
 			}
 		});
@@ -155,6 +158,8 @@ async function checkIfUsersSeenMessages(username, conversationID, mode, count) {
 					updateConversationsOfUser(name, conversationID);
 				}
 			})
+		} else {
+			updateConversationsOfUser(name, conversationID);
 		}
 	}
 }

@@ -1100,9 +1100,8 @@ function loadRecentMessages(messages) {
 			let id = messageID || conversationID;
 			let date = getDateOfMessage(id);
 
-			if (!$('#' + conversationID).exists()) {
-				addRecentMessage(conversationID, title, content, date, unseen, false);
-			}
+			addRecentMessage(conversationID, title, content, date, unseen, false);
+			
 		}
 	});
 }
