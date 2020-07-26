@@ -1410,7 +1410,7 @@ function getPendingID() {
 }
 
 function generateID() {
-	return '_' + Math.random().toString(36).slice(2, 7);
+	return '_' + Math.random().toString(36).slice(2, 9);
 }
 
 function scrollToMessage(searchMessageID) {
