@@ -270,6 +270,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom .search-minimize .fa-search {
 	transform: scale(1.5); 
+	transition: color .1s linear;
 }
 
 .chatroom .fa-search {
@@ -727,6 +728,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom .scroll-bottom .fa {
 	color: white;
 	cursor: pointer;
+	transition: color .1s linear;
 }
 
 .chatroom .scroll-bottom .fa:hover {
@@ -851,6 +853,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	color: grey;
 	right: 5px;
 	top: 0;
+	transition: color .1s linear;
 }
 
 .chatroom .delete-button:hover {
@@ -1047,12 +1050,4 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	.chatroom .unseen-messages {
 		justify-content: center;
 	}
-}
-
-::selection {
-  background: #FFB6C1;
-}
-
-::-moz-selection {
-  background: #FFB6C1; 
 }

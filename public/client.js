@@ -45,12 +45,12 @@ $(document).ready(function() {
 
 	$('[data-toggle="tooltip"]').tooltip();
 
-	$('.scroll-bottom').click(function(){
+	$('.scroll-bottom .fa').click(function(){
 		scrollBottomAnimation = true;
 
 		$('.scroll-bottom').fadeOut(500);
 
-		$(chatContainer).animate({ scrollTop: chatContainer.scrollHeight}, 1500, function() {
+		$(chatContainer).animate({ scrollTop: chatContainer.scrollHeight}, 800, function() {
 			scrollBottomAnimation = false;
 			enableScroll();
 		});
@@ -183,10 +183,10 @@ $(document).ready(function() {
 			}
 
 		} else {
-			if (value.substr(0, 6) === 'users:' && !$('.search-tag').is(':visible')) {
+			if (value.slice(0, 6) === 'users:' && !$('.search-tag').is(':visible')) {
 				$('#search').val(value.slice(6));
 				addSearchTag(1);
-			} else if (value.substr(0, 9) === 'messages:' && !$('.search-tag').is(':visible')) {
+			} else if (value.slice(0, 9) === 'messages:' && !$('.search-tag').is(':visible')) {
 				$('#search').val(value.slice(9));
 				addSearchTag(2);
 			}
@@ -658,7 +658,7 @@ function getFullDate(date) {
 }
 
 function getTimestamp(id) {
-	var timestamp = id.toString().substring(0,8);
+	var timestamp = id.toString().slice(0,8);
 	return new Date(parseInt(timestamp, 16) * 1000);
 }
 
@@ -1410,7 +1410,7 @@ function getPendingID() {
 }
 
 function generateID() {
-	return '_' + Math.random().toString(36).substr(2, 9);
+	return '_' + Math.random().toString(36).slice(2, 7);
 }
 
 function scrollToMessage(searchMessageID) {
