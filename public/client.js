@@ -918,9 +918,9 @@ function createAndAddBackToCommunityRedirection() {
 	$(icon).attr('data-toggle', 'tooltip');
 	$(icon).tooltip();
 
-	$(icon).on('click touchend', function(){
-		$(this).tooltip('hide');
-		$(this).parent().remove();
+	$(document).on('click touchend', '.redirect-container', function(){
+		$('.redirect-icon').tooltip('hide');
+		$('.redirect-container').remove();
 		requestCommunity();
 	});
 
