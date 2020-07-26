@@ -673,6 +673,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	height: 100%;
 	font-size: 16px;
 	bottom: 0;
+	border-radius: 0;
 	border: none;
 	border-top: 1px solid rgba(185, 185, 185, 0.4);
 

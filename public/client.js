@@ -27,7 +27,7 @@ var scrollDisabled = false;
 var activeElement = document;
 
 $(document).ready(function() {
-	$(document).on('click', '.x-icon', function(e){	
+	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
 		$('#search').val('');
 		$('.search-dropdown .spinner-container').remove();	
@@ -39,13 +39,13 @@ $(document).ready(function() {
 
 	$(document).keydown((e) => arrowKeyScroll(e));
 
-	$(document).click(function(e){
+	$(document).on('click touchend', function(e){
 		activeElement = e.target;
 	});
 
 	$('[data-toggle="tooltip"]').tooltip();
 
-	$('.scroll-bottom .fa').click(function(){
+	$('.scroll-bottom .fa').on('click touchend', function(){
 		scrollBottomAnimation = true;
 
 		$('.scroll-bottom').fadeOut(500);
@@ -56,7 +56,7 @@ $(document).ready(function() {
 		});
 	});
 
-	$('.nav-container').click(function(){
+	$('.nav-container').on('click touchend', function(){
 		$('.dropdown-item').removeClass('selected');
 	});
 	
@@ -108,18 +108,17 @@ $(document).ready(function() {
 
 	});
 
-	$('#send-message').click(sendMessage);
+	$('#send-message').on('click touchend', sendMessage);
 
-	$('.navbar-toggler').click(function(){
+	$('.navbar-toggler').on('click touchend', function(){
 		if (!$(this).hasClass('collapsed')) {
 			$('.navbar').css({'min-height':  ''});
 		}
 	});
 
+	$('.search-minimize').on('click touchend', searchMinimized);
 
-	$('.search-minimize').click(searchMinimized);
-
-	$('.search-option').click(function(){
+	$('.search-option').on('click touchend', function(){
 		if ($(this).hasClass('so1')) {
 			addSearchTag(1);	
 		} else {
@@ -380,7 +379,7 @@ function searchMinimized() {
 		cancel.className = 'cancel-search';
 		cancel.innerHTML = 'Cancel';
 
-		$(cancel).click(function() {
+		$(cancel).on('click touchend', function() {
 			$(this).remove();
 
 			$('li').show();
@@ -696,7 +695,7 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 	const messageDate = document.createElement('div');
 	const unseenMessages = document.createElement('div');
 
-	$(recentMessageContainer).click(() => changeRoom.call(recentMessageContainer, recentMessageContainer.id));
+	$(recentMessageContainer).on('click touchend', () => changeRoom.call(recentMessageContainer, recentMessageContainer.id));
 
 	$(recentMessageContainer).hover(hoverDropdown);
 
@@ -759,7 +758,7 @@ function loadSearchMessages(messages) {
 		$(recentMessage).attr('data-messageID', messageID);
 		$(recentMessage).removeAttr('id');
 
-		$(recentMessage).unbind('click').bind('click', () => {
+		$(recentMessage).unbind('click').bind('click touchend', () => {
 			if ($('#' + messageID).exists()) {
 				scrollToMessage(messageID);
 			} else {
@@ -791,7 +790,7 @@ function createSearchUser(username) {
 	container.className = 'dropdown-item search-user';
 	container.innerHTML = username;
 
-	$(container).click(function(){
+	$(container).on('click touchend', function(){
 		requestPrivateChat(username);
 		$('#search').blur();
 	});
@@ -897,7 +896,7 @@ function createDeleteButton() {
 	button.className = "delete-button";
 	button.innerText = "Delete";
 
-	$(button).click(function(e){
+	$(button).on('click touchend', function(e){
 		socket.emit('message-removed', {
 			messageID: $(e.target).closest('.message-container').attr('id'),
 			conversationID: conversationID
@@ -919,7 +918,7 @@ function createAndAddBackToCommunityRedirection() {
 	$(icon).attr('data-toggle', 'tooltip');
 	$(icon).tooltip();
 
-	$(icon).click(function(){
+	$(icon).on('click touchend', function(){
 		$(this).tooltip('hide');
 		$(this).parent().remove();
 		requestCommunity();
@@ -944,7 +943,7 @@ function createUser(username) {
 	if (username !== currentUsername) {
 		$(onlineUserContainer).css('cursor', 'pointer');
 
-		$(onlineUserContainer).click(function(){
+		$(onlineUserContainer).on('click touchend', function(){
 			requestPrivateChat(username);
 		});
 	}
