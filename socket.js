@@ -1056,9 +1056,9 @@ function handleConnections(_io) {
 				disconnectFromRoom(socket, conversationID);
 			}
 
-			if (users[username] === 1) {
+			if (users[username] <= 1) {
 				const onlineUsers = rooms[communityConversationID].onlineUsers;
-				const connectedUsers = rooms[conversationID].connectedUsers;
+				const connectedUsers = rooms[communityConversationID].connectedUsers;
 				const index = connectedUsers.indexOf(socket);
 
 				if (index !== -1) {
