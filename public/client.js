@@ -35,6 +35,12 @@ $(document).ready(function() {
 		deleteSearchTag();
 	});
 
+	$(document).on('click touchend', '.redirect-container', function(){
+		$('.redirect-icon').tooltip('hide');
+		$('.redirect-container').hide();
+		requestCommunity();
+	});
+
 	$(window).on('resize', updateNavbar);
 
 	$(document).keydown((e) => arrowKeyScroll(e));
@@ -42,6 +48,7 @@ $(document).ready(function() {
 	$(document).on('click touchend', function(e){
 		activeElement = e.target;
 	});
+
 
 	$('[data-toggle="tooltip"]').tooltip();
 
@@ -529,7 +536,7 @@ socket.on('prepare-room-change', function({conversationID, redirect}){
 	resetRoom();
 
 	if (redirect) {
-		createAndAddBackToCommunityRedirection();
+		$('.redirect-container').show();
 	}
 });
 
@@ -904,30 +911,6 @@ function createDeleteButton() {
 	});
 
 	return buttonContainer;
-}
-
-function createAndAddBackToCommunityRedirection() {
-	const container = document.createElement('div');
-	const icon = document.createElement('span');
-
-	icon.className = "redirect-icon";
-	icon.title = "Back to Community Chat";
-	container.className = "redirect-container";
-
-	$(icon).attr('title', 'Back to Community Chat')
-	$(icon).attr('data-toggle', 'tooltip');
-	$(icon).tooltip();
-
-	$(document).on('click touchend', '.redirect-container', function(){
-		$('.redirect-container').css({'border': 'none'});
-		$('.redirect-icon').tooltip('hide');
-		$('.redirect-container').remove();
-		requestCommunity();
-	});
-
-	container.append(icon);
-
-	$('.online-users').append($(container));
 }
 
 function createUser(username) {
@@ -1375,9 +1358,8 @@ function resetRoom() {
 	clearAllMessages();
 	clearInput();
 
-	if ($('.redirect-container')) {
-		$('.redirect-container').remove();
-	}
+	$('.redirect-container').hide();
+	
 }
 
 function clearAllOnlineUsers() {
@@ -1445,7 +1427,7 @@ function adjustOnlineUsersContainerHeight() {
 	var height = $('.online-users').height() - $('h6').outerHeight();
 
 
-	if ($('.redirect-container').exists()) {
+	if ($('.redirect-container').is(':visible')) {
 		height -= $('.redirect-container').height();
 	}
 

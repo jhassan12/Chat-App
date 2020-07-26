@@ -849,6 +849,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 
 .chatroom .redirect-container {
+	display: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
