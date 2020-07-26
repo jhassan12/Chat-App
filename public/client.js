@@ -1230,7 +1230,7 @@ function clearInput() {
 	$('.input-fields-container').outerHeight(TEXTFIELD_HEIGHT);
 	$('.button-container').outerHeight(TEXTFIELD_HEIGHT);
 	$(inputField).outerHeight(TEXTFIELD_HEIGHT);
-	$(chatContainer).outerHeight('88%');
+	$(chatContainer).outerHeight($('.chat-container').outerHeight() - $('.input-fields-container').outerHeight() - $('.room-name').outerHeight() - 2);
 }
 
 function getPaddingHeight(element) {

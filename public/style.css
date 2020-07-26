@@ -676,7 +676,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom .chat {
 	padding: 5px;
 	width: 75%;
-	height: 89%;
 	overflow: auto;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
@@ -1010,9 +1009,9 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		height: 40px;
 	}
 
-
-
-
+	.chatroom .redirect-container {
+		border: none;
+	}
 }
 
 @media only screen and (max-width: 575px) {
