@@ -919,6 +919,7 @@ function createAndAddBackToCommunityRedirection() {
 	$(icon).tooltip();
 
 	$(document).on('click touchend', '.redirect-container', function(){
+		$('.redirect-container').css({'border': 'none'});
 		$('.redirect-icon').tooltip('hide');
 		$('.redirect-container').remove();
 		requestCommunity();
