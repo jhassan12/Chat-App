@@ -135,8 +135,6 @@ async function updateConversationsOfUser(username, conversationID) {
 
 				const recentMessage = await createRecentMessage(username, conversationID);
 
-				console.log(recentMessage);
-
 				io.sockets.in(username).emit('add-recent-message', recentMessage);
 			}
 		});
@@ -692,7 +690,11 @@ function changeRoom(socket, username, oldConversationID, newConversationID, sear
 		disconnectFromRoom(socket, oldConversationID);
 	} else {
 		const connectedUsers = rooms[oldConversationID].connectedUsers;
-		connectedUsers.splice(connectedUsers.indexOf(socket), 1);
+		const index = connectedUsers.indexOf(socket);
+
+		if (index !== -1) {
+			connectedUsers.splice(index, 1);
+		}
 	}
 
 	connectToRoom(socket, username, newConversationID, search);
@@ -700,15 +702,17 @@ function changeRoom(socket, username, oldConversationID, newConversationID, sear
 
 function disconnectFromRoom(socket, conversationID) {
 	const username = socket.username;
+	const connectedUsers = rooms[conversationID].connectedUsers;
+	const onlineUsers = rooms[conversationID].onlineUsers;
+	const index = connectedUsers.indexOf(socket);
 
 	if (!rooms[conversationID]) {
 		return;
-	} 
-	
-	const connectedUsers = rooms[conversationID].connectedUsers;
-	const onlineUsers = rooms[conversationID].onlineUsers;
+	}
 
-	connectedUsers.splice(connectedUsers.indexOf(socket), 1);
+	if (index !== -1) {
+		connectedUsers.splice(index, 1);
+	} 
 
 	if (!userExists(username, connectedUsers)) {
 		io.sockets.in(conversationID).emit('disconnect-user', username);
@@ -954,7 +958,7 @@ function handleConnections(_io) {
 
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!conversationID) {
 				return;
@@ -984,7 +988,7 @@ function handleConnections(_io) {
 
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			validConversation = await validateConversation(username, conversationID);
 
@@ -998,7 +1002,7 @@ function handleConnections(_io) {
 		socket.on('input-received', async function(message){
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!message || !message.content || !message.temporaryID || !message.conversationID) {
 				return;
@@ -1018,7 +1022,7 @@ function handleConnections(_io) {
 		socket.on('message-removed', async function(message){
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!message || !message.messageID || !message.conversationID) {
 				return;
@@ -1040,25 +1044,42 @@ function handleConnections(_io) {
 		socket.on('disconnect', function(){
 			const conversationID = socket.conversationID;
 			const username = socket.username;
+			var isRoomCommunity;
 
 			if (!rooms[conversationID]) {
 				return;
 			}
 
-			if (!isCommunity(conversationID)) {
+			isRoomCommunity = isCommunity(conversationID);
+
+			if (!isRoomCommunity) {
 				disconnectFromRoom(socket, conversationID);
 			}
 
 			if (users[username] === 1) {
-				disconnectFromRoom(socket, communityConversationID);
-			} else if (conversationID === communityConversationID) {
+				const onlineUsers = rooms[communityConversationID].onlineUsers;
 				const connectedUsers = rooms[conversationID].connectedUsers;
-				connectedUsers.splice(connectedUsers.indexOf(socket), 1);
+				const index = connectedUsers.indexOf(socket);
+
+				if (index !== -1) {
+					connectedUsers.splice(index, 1);
+				}
+
+				onlineUsers.delete(username);
+
+				io.sockets.in(communityConversationID).emit('disconnect-user', username);
+				console.log(`${username} has disconnected from ROOM ${communityConversationID}`);
+			} else if (isRoomCommunity) {
+				const connectedUsers = rooms[conversationID].connectedUsers;
+				const index = connectedUsers.indexOf(socket);
+
+				if (index !== -1) {
+					connectedUsers.splice(index, 1);
+				}
 			}
 
 			delete recentMessagesCache[username];
 
-			socket.leave(username);
 			socket.disconnect();
 
 			users[username]--;
@@ -1075,7 +1096,7 @@ function handleConnections(_io) {
 		socket.on('fetch-messages', async function(obj) {
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!obj || !obj.messagesLoaded || !obj.conversationID) {
 				return;
@@ -1095,7 +1116,7 @@ function handleConnections(_io) {
 		socket.on('request-private-chat', async function(obj){
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!obj || !obj.users || !obj.conversationID) {
 				return;
@@ -1121,7 +1142,7 @@ function handleConnections(_io) {
 		socket.on('request-community', async function(conversationID){
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!conversationID) {
 				return;
@@ -1139,7 +1160,7 @@ function handleConnections(_io) {
 		socket.on('change-room', async function(obj){
 			const userID = socket.request.session.passport.user;
 			const username = await getUsername(userID);
-			var validConversation = undefined;
+			var validConversation;
 
 			if (!obj || !obj.oldConversationID || !obj.newConversationID) {
 				return;

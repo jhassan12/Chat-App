@@ -557,6 +557,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-size: 50px;
 	background-position: 50%, 50%;
 	cursor: pointer;
+	transition: background .1s linear;
 }
 
 .chatroom .nav-container:hover .nav-message-icon {
@@ -591,6 +592,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	box-shadow: none;
 	outline: none;
 	border: none;
+	transition: color .1s linear;
 }
 
 .chatroom .nav-link:hover{
@@ -649,6 +651,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	bottom: 0px;
 	width: 30px;
 	height: 100%;
+	transition: background .1s linear;
 }
 
 .chatroom #send-message:hover {
@@ -913,6 +916,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	outline: none;
 	border: none;
 	box-shadow: none;
+	transition: background .1s linear;
 }
 
 .chatroom .redirect-icon:hover {
