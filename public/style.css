@@ -142,7 +142,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .auth .account-error {
 	position: absolute;
 	width: 100%;
-	color: red !important;
+	color: red;
 	font-size: 0.7rem;
 	bottom: -7px;
 }
@@ -155,7 +155,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
    	 	margin-right:auto;
    	 	overflow-x: scroll;
 		overflow-y: scroll;
-		color: white;
 	}
 
 	.auth .btn-primary {
@@ -179,19 +178,9 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
-html {
-	position: relative;
-  	height: 100%;
-  	overflow: hidden;
-}
-
 .chatroom {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
-
-	position: relative;
-  	height: 100%;
-  	overflow: hidden;
 }
 
 .no-select {
