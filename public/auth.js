@@ -17,7 +17,6 @@ $(document).ready(function() {
 	});
 
 
-
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
 		

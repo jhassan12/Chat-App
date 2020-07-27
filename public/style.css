@@ -1026,6 +1026,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
   animation-delay: -0.8s;
 }
 
+
+
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
   20% { -webkit-transform: scaleY(1.0) }
@@ -1041,11 +1043,69 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
   }
 }
 
-@media only screen and (max-device-width: 600px) and (orientation: portrait) {
-	.chatroom .chat {
-		overflow: auto !important;
-	}
+.chatroom .search-option-hover {
+	background-color: #393c40;
 }
+
+.chatroom .cancel-search-hover { 
+	color: #D3D3D3 !important;
+}
+
+.chatroom .search-minimize .fa-search-hover {
+	color: #D3D3D3;;
+}
+
+.chatroom .no-private-messages-hover {
+	background-color: black;
+}
+
+.chatroom .nav-message-icon-hover {
+	background: url('/Images/nav-message-icon-gold.png');
+	background-repeat: no-repeat;
+	background-position: 50%, 50%;
+	background-size: 50px;
+	width: 40px;
+	height: 40px;
+}
+
+.chatroom .nav-link-hover {
+	color: #D3D3D3;
+	text-decoration: none;
+}
+
+
+.chatroom .send-message-hover {
+	background: url('/Images/send-icon.png');
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 50%, 50%;
+}
+
+.chatroom .scroll-bottom .fa-hover {
+	color: #00a8e1;
+}
+
+.chatroom .message-hover {
+	transform: scale(1.025);
+}
+
+.chatroom .delete-button-hover {
+	color: red !important;
+}
+
+.chatroom .online-user-hover {
+	background-color: rgba(105,105,105, 0.2);
+}
+
+.chatroom .redirect-icon-hover {
+	background: url('/Images/left-arrow.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 50%, 50%;
+	width: 60px;
+	height: 40px;
+}
+
 
 @media (hover: hover) {
 	.chatroom .search-option:hover {
@@ -1115,6 +1175,14 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		border-top: 1px solid rgba(185, 185, 185, 0.4);
 	}
 }
+
+
+@media only screen and (max-device-width: 600px) and (orientation: portrait) {
+	.chatroom .chat {
+		overflow: auto !important;
+	}
+}
+
 
 @media only screen and (max-width: 575px) {
 	.chatroom .container {
