@@ -184,7 +184,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	position: fixed;
   	height: 100%;
   	overflow: hidden;
-  	-webkit-overflow-scrolling: touch;
 }
 
 .no-select {
