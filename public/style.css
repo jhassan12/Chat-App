@@ -27,8 +27,7 @@
 	font-size: 0.8rem;
 }
 
-.auth a:hover,
-.auth a:active {
+.auth a:hover {
 	color: rgb(100, 100, 100);
 	text-decoration: none;
 }
@@ -176,6 +175,12 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		width: 500px;
 		height: 700px;
 	}
+}
+
+html {
+	position: relative;
+  	height: 100%;
+  	overflow: hidden;
 }
 
 .chatroom {
@@ -1033,27 +1038,24 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
-	.chatroom .search-option:hover, .search-option:active {
+@media (hover: hover) {
+	.chatroom .search-option:hover {
 		background-color: #393c40;
 	}
 
-	.chatroom .cancel-search:hover,
-	.chatroom .cancel-search:active { 
+	.chatroom .cancel-search:hover{ 
 		color: #D3D3D3 !important;
 	}
 
-	.chatroom .search-minimize .fa-search:hover,
-	.chatroom .fa-search:active {
+	.chatroom .search-minimize .fa-search:hover {
 		color: #D3D3D3;;
 	}
 
-	.chatroom #no-private-messages:hover,
-	.chatroom #no-private-messages:active {
+	.chatroom #no-private-messages:hover {
 		background-color: black;
 	}
 
-	.chatroom .nav-container:hover .nav-message-icon,
-	.chatroom .nav-container:active .nav-message-icon {
+	.chatroom .nav-container:hover .nav-message-icon {
 		background: url('/Images/nav-message-icon-gold.png');
 		background-repeat: no-repeat;
 		background-position: 50%, 50%;
@@ -1062,43 +1064,36 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		height: 40px;
 	}
 
-	.chatroom .nav-link:hover,
-	.chatroom .nav-link:active {
+	.chatroom .nav-link:hover{
 		color: #D3D3D3;
 		text-decoration: none;
 	}
 
 
-	.chatroom #send-message:hover,
-	.chatroom #send-message:active {
+	.chatroom #send-message:hover {
 		background: url('/Images/send-icon.png');
 		background-repeat: no-repeat;
 		background-size: 30px;
 		background-position: 50%, 50%;
 	}
 
-	.chatroom .scroll-bottom .fa:hover,
-	.chatroom .scroll-botton .fa:active {
+	.chatroom .scroll-bottom .fa:hover {
 		color: #00a8e1;
 	}
 
-	.chatroom .message:hover,
-	.chatroom .message:active {
+	.chatroom .message:hover {
 		transform: scale(1.025);
 	}
 
-	.chatroom .delete-button:hover,
-	.chatroom .delete-button:active {
+	.chatroom .delete-button:hover {
 		color: red !important;
 	}
 
-	.chatroom .online-user:hover,
-	.chatroom .online-user:active  {
+	.chatroom .online-user:hover  {
 		background-color: rgba(105,105,105, 0.2);
 	}
 
-	.chatroom .redirect-icon:hover,
-	.chatroom .redirect-icon:active {
+	.chatroom .redirect-icon:hover {
 		background: url('/Images/left-arrow.png');
 		background-repeat: no-repeat;
 		background-size: 100%;
@@ -1110,15 +1105,16 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	.chatroom .redirect-container {
 		border-top: 1px solid rgba(185, 185, 185, 0.4);
 	}
-
+}
 
 @media only screen and (max-width: 575px) {
 	.chatroom .container {
 		position: relative;
+		padding: 0;
 		top: 0;
 		left: 0;
 		min-width: 100%;
-		height: 90%;
+		height: 100vh;
 		max-height: 1000px;
 	}
 
