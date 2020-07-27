@@ -1,3 +1,9 @@
+html {
+    height  : 100%;
+    overflow: hidden;
+    position: relative;
+}
+
 .auth {
 	background-color: rgba(0,0,0, 0.85);
 	overflow-y: auto;
@@ -11,10 +17,13 @@
 }
 
 .auth p {
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+
 	color: white;
 	font-size: 1rem;
 }
@@ -45,11 +54,12 @@
 }
 
 .auth .form-group {
-	-webkit-backface-visibility: hidden;
 	position: relative;
 	width: 100%;
 	padding-top:  20px;
 	padding-bottom: 10px;
+
+	-webkit-backface-visibility: hidden;
 }
 
 .auth .form-group .floating-label {
@@ -102,10 +112,14 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .auth .button-container {
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+
+
   	padding-bottom: 5px;
 }
 
@@ -163,8 +177,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
-	overflow: auto;
-	min-width: 470px;
 }
 
 .no-select {
@@ -240,14 +252,18 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 
 .chatroom .search-icon-container {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
 	position: absolute;
 	right: 0;
-	display: flex;
-	display: -webkit-flex;
-	justify-content: center;
-	-webkit-justify-content: center;
-	align-items: center;
-	-webkit-align-items: center;
 	width: 5%;
 	min-width: 40px;
 	height: 35px;
@@ -343,10 +359,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .search-user {
-	display: flex;
 	display: -webkit-flex;
-	align-items: center;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
 	-webkit-align-items: center;
+	align-items: center;
+
 	padding: 10px;
 	line-height: 15px;
 	height: 45px !important;
@@ -486,10 +505,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom .left-container {
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	-webkit-justify-content: space-between;
+	-ms-flex-pack: center;
 	justify-content: space-between;
 
 	height: 100%;
@@ -499,10 +521,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom .right-container {
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	-webkit-justify-content: space-between;
+	-ms-flex-pack: space-between;
 	justify-content: space-between;
 
 	height: 100%;
@@ -511,16 +536,20 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .recent-message-date {
-	margin-left: auto;
+	position: absolute;
+	right: 5px;
 	font-size: 0.8em;
 }
 
 .chatroom .unseen-messages {
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-align-items: center;
+	-ms-flex-align: center;
 	align-items: center;
 	-webkit-justify-content: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 
 	width: 22px;
@@ -623,12 +652,16 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .button-wrapper {
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
-	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
 	width: 100%;
 	height: 29px;
 }
@@ -682,12 +715,16 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .room-name {
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
-	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
 	width: 75%;
 	height: 30px;
 	padding-left: 50px;
@@ -733,13 +770,17 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom h6 {
-	height: 30px;
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
-	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	height: 30px;
 	background-color: rgba(0,0,0, 0.2);	
 	padding: 5px;
 	margin: 0;
@@ -803,6 +844,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background: transparent;
 	transition: all .1s linear; 
 	outline: 1px solid transparent;
+
 	-webkit-backface-visibility: hidden;
 }
 
@@ -871,12 +913,16 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .redirect-container {
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
-	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
 	-webkit-align-items: center;
+	align-items: center;
+
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -907,13 +953,17 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .spinner-container {
-	position: relative;
-	display: flex;
 	display: -webkit-flex;
-	justify-content: center;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
-	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	position: relative;
 	margin-bottom: 20px;
 	width: 100%;
 	
