@@ -50,7 +50,7 @@ $(document).ready(function() {
 	});
 
 	$('.redirect-container').hide();
-	
+
 	$('[data-toggle="tooltip"]').tooltip();
 
 	$('.scroll-bottom .fa').on('click touchend', function(){
@@ -703,7 +703,7 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 	const messageDate = document.createElement('div');
 	const unseenMessages = document.createElement('div');
 
-	$(recentMessageContainer).on('click touchend', () => changeRoom.call(recentMessageContainer, recentMessageContainer.id));
+	$(recentMessageContainer).on('click', () => changeRoom.call(recentMessageContainer, recentMessageContainer.id));
 
 	$(recentMessageContainer).hover(hoverDropdown);
 
@@ -766,7 +766,7 @@ function loadSearchMessages(messages) {
 		$(recentMessage).attr('data-messageID', messageID);
 		$(recentMessage).removeAttr('id');
 
-		$(recentMessage).unbind('click').bind('click touchend', () => {
+		$(recentMessage).unbind('click').bind('click', () => {
 			if ($('#' + messageID).exists()) {
 				scrollToMessage(messageID);
 			} else {
