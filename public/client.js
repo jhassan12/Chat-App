@@ -49,7 +49,8 @@ $(document).ready(function() {
 		activeElement = e.target;
 	});
 
-
+	$('.redirect-container').hide();
+	
 	$('[data-toggle="tooltip"]').tooltip();
 
 	$('.scroll-bottom .fa').on('click touchend', function(){
