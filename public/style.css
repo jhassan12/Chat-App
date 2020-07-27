@@ -27,11 +27,6 @@
 	font-size: 0.8rem;
 }
 
-.auth a:hover {
-	color: rgb(100, 100, 100);
-	text-decoration: none;
-}
-
 .auth .btn-primary {
 	box-shadow: none !important;
 	border: 1px solid white !important;
@@ -39,12 +34,6 @@
 	background-color: black;
 	white-space: nowrap;
 	width: 150px;
-}
-
-.auth .btn-primary:hover,
-.auth .btn-primary:active {
-	background-color: white!important;
-	color: black !important;
 }
 
 .auth .form-group {
@@ -146,10 +135,29 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	bottom: -7px;
 }
 
+@media (hover: hover) {
+	.auth a:hover {
+		color: rgb(100, 100, 100);
+		text-decoration: none;
+	}
+
+	.auth .btn-primary:hover,
+	.auth .btn-primary:active {
+		background-color: white!important;
+		color: black !important;
+	}
+}
+
 @media only screen and (max-width: 500px){
 	.auth {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+
 		background: black;
-		width: 500px;
 		margin-left:auto;
    	 	margin-right:auto;
    	 	overflow-x: scroll;
@@ -167,12 +175,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 
 	.auth .container {
-		position: absolute;
-		top: 60%;
 		border: none;
 		background: black;
 		width: 500px;
-		height: 700px;
+		padding-bottom: 75px;
 	}
 }
 
@@ -1031,7 +1037,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
-
+@media (hover: hover) {
 	.chatroom .search-option:hover,
 	.chatroom .search-option:active {
 		background-color: #393c40;
@@ -1110,7 +1116,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	.chatroom .redirect-container {
 		border-top: 1px solid rgba(185, 185, 185, 0.4);
 	}
-
+}
 
 @media only screen and (max-width: 575px) {
 	.chatroom .container {
