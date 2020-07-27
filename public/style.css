@@ -167,9 +167,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 
 	.auth .container {
-		all: unset;
 		position: absolute;
-		top: 10%;
+		top: 60%;
 		border: none;
 		background: black;
 		width: 500px;
