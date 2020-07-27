@@ -51,7 +51,11 @@ $(document).ready(function() {
 
 	$('.redirect-container').hide();
 
-	$('[data-toggle="tooltip"]').tooltip();
+
+	if(!('ontouchstart' in window)) {
+  		$('[data-toggle="tooltip"]').tooltip();
+	}
+
 
 	$('.scroll-bottom .fa').on('click touchend', function(){
 		scrollBottomAnimation = true;
