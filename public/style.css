@@ -507,13 +507,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 	height: 100%;
 	width: 30%;
-	padding-right: 5px;
 	float: right;
 }
 
 .chatroom .recent-message-date {
-	position: relative;
-	display: block;
 	margin-left: auto;
 	font-size: 0.8em;
 }
@@ -525,6 +522,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	align-items: center;
 	-webkit-justify-content: center;
 	justify-content: center;
+
 	width: 22px;
 	height: 22px;
 	font-size: 15px;
