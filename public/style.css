@@ -1,9 +1,3 @@
-html {
-    height  : 100%;
-    overflow: hidden;
-    position: relative;
-}
-
 .auth {
 	background-color: rgba(0,0,0, 0.85);
 	overflow-y: auto;
@@ -810,6 +804,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	min-width: 90vw;
 	height: 85vh;
 	min-height: 560px;
+	padding-bottom: 10px;
 }
 
 .chatroom .online-users {
