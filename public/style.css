@@ -177,19 +177,19 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 
 	.auth h1 {
-		color: white;
+		color: white !important;
 	}
 
 	.auth p {
-		color: white;
+		color: white !important;
 	}
 
 	.auth a {
-		color: rgb(185, 185, 185);
+		color: rgb(185, 185, 185) !important;
 	}
 
 	.auth .form-group input {
-		color: white;
+		color: white !important;
 	}
 }
 
