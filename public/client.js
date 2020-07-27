@@ -783,6 +783,7 @@ function loadSearchMessages(messages) {
 				changeRoom.call(recentMessage, $(recentMessage).data('conversationid'), {searchMessageID: messageID, messagesLoaded: numberOfMessagesLoaded});
 			}
 
+			$('#search').blur();
 			cancelSearch();
 			$('.navbar-toggler').click();
 		});
@@ -812,6 +813,9 @@ function createSearchUser(username) {
 	$(container).on('click touchend', function(){
 		requestPrivateChat(username);
 		$('#search').blur();
+
+		cancelSearch();
+		$('.navbar-toggler').click();
 	});
 
 	$(container).hover(hoverDropdown);

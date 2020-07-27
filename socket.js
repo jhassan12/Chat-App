@@ -976,6 +976,8 @@ function handleConnections(_io) {
 				users[username]++;
 			}
 
+			console.log(users);
+
 			socket.join(username);
 
 			loadRecentMessages(socket, username, 0).then(connectToRoom(socket, username, conversationID));	
@@ -1081,8 +1083,9 @@ function handleConnections(_io) {
 			delete recentMessagesCache[username];
 
 			socket.disconnect();
-
 			users[username]--;
+
+			console.log(users);
 		});
 
 
