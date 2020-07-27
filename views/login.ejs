@@ -1,6 +1,10 @@
-<body class="auth">
-  <div class="container">
 
+<script type="text/javascript">
+  $(window).scrollTo($('h1').offset.top);
+</script>
+
+<body class="auth" onload="scrollToMiddle()">
+  <div class="container">
     <% if (successMessage.length > 0) { %>
     <div class="alert alert-success">
       <%= successMessage %>

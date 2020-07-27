@@ -1,3 +1,9 @@
+html {	
+	height: 100%;
+  	width: 100%;
+  	overflow: hidden;
+}
+
 .auth {
 	background-color: rgba(0,0,0, 0.85);
 	overflow-y: auto;
@@ -113,8 +119,17 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	-ms-flex-pack: center;
 	justify-content: center;
 
-
   	padding-bottom: 5px;
+}
+
+.auth .anchor {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 10px;
+	left: 50%;
+	margin-left: 20px;
+	background-color: blue;
 }
 
 .auth .container {
