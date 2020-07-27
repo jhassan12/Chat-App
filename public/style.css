@@ -174,22 +174,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		width: 500px;
 		height: 700px;
 	}
-
-	.auth h1 {
-		color: white !important;
-	}
-
-	.auth p {
-		color: white !important;
-	}
-
-	.auth a {
-		color: rgb(185, 185, 185) !important;
-	}
-
-	.auth .form-group input {
-		color: white !important;
-	}
 }
 
 .chatroom {
