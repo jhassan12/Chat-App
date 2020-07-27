@@ -27,7 +27,8 @@
 	font-size: 0.8rem;
 }
 
-.auth a:hover {
+.auth a:hover,
+.auth a:active {
 	color: rgb(100, 100, 100);
 	text-decoration: none;
 }
@@ -141,7 +142,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .auth .account-error {
 	position: absolute;
 	width: 100%;
-	color: red;
+	color: red !important;
 	font-size: 0.7rem;
 	bottom: -7px;
 }
@@ -176,6 +177,12 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		width: 500px;
 		height: 700px;
 	}
+}
+
+html {
+	position: relative;
+  	height: 100%;
+  	overflow: hidden;
 }
 
 .chatroom {
