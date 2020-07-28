@@ -317,7 +317,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .x-icon {
-	background-image: url('/Images/x-icon.png');
+	background: url('/Images/x-icon.png');
 	background-repeat: no-repeat;
 	background-size: 15px;
 	background-position: 50%, 50%;
@@ -405,6 +405,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom .dropdown {
 	padding-right: 10px;
 	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .chatroom .ellipses {
@@ -612,17 +616,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-color: red;
 }
 
-.chatroom .nav-message-icon {
+.chatroom .fa-envelope-o {
 	display: block;
-	width: 40px;
-	height: 40px;
-	background-image: url('/Images/nav-message-icon.png');
-	background-repeat: no-repeat;
-	background-size: 50px;
-	background-position: 50%, 50%;
+	color: white;
 	cursor: pointer;
 	transition: background .1s linear;
-	-webkit-backface-visibility: hidden;
+	padding-bottom: 2px;
+	padding-left: 10px;
 }
 
 .chatroom .nav-container {
@@ -700,7 +700,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom #send-message {
 	display: block;
-	background-image: url('/Images/send-icon-outline.png');
+	background: url('/Images/send-icon-outline.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
@@ -968,7 +968,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom .redirect-icon {
 	display: inline-block;
-	background-image: url('/Images/left-arrow-outline.png');
+	background: url('/Images/left-arrow-outline.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 50%, 50%;
@@ -1083,14 +1083,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-color: black;
 }
 
-.chatroom .nav-container:active .nav-message-icon {
-	background-image: url('/Images/nav-message-icon-gold.png');
-	background-repeat: no-repeat;
-	background-position: 50%, 50%;
-	background-size: 50px;
-	width: 40px;
-	height: 40px;
-	-webkit-backface-visibility: hidden;
+.chatroom .nav-container:active .fa-envelope-o {
+	color: #FFD700;
 }
 
 .chatroom .nav-link:active {
@@ -1099,7 +1093,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom #send-message:active {
-	background-image: url('/Images/send-icon.png');
+	background: url('/Images/send-icon.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
@@ -1122,7 +1116,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .redirect-icon:active {
-	background-image: url('/Images/left-arrow.png');
+	background: url('/Images/left-arrow.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 50%, 50%;
@@ -1147,14 +1141,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		background-color: black;
 	}
 
-	.chatroom .nav-container:hover .nav-message-icon {
-		background-image: url('/Images/nav-message-icon-gold.png');
-		background-repeat: no-repeat;
-		background-position: 50%, 50%;
-		background-size: 50px;
-		width: 40px;
-		height: 40px;
-		-webkit-backface-visibility: hidden;
+	.chatroom .nav-container:hover .fa-envelope-o {
+		color: #FFD700;
 	}
 
 	.chatroom .nav-link:hover {
@@ -1164,7 +1152,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 
 	.chatroom #send-message:hover {
-		background-image: url('/Images/send-icon.png');
+		background: url('/Images/send-icon.png');
 		background-repeat: no-repeat;
 		background-size: 30px;
 		background-position: 50%, 50%;
@@ -1187,7 +1175,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 
 	.chatroom .redirect-icon:hover {
-		background-image: url('/Images/left-arrow.png');
+		background: url('/Images/left-arrow.png');
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: 50%, 50%;
