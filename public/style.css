@@ -616,7 +616,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	content: url('/Images/nav-message-icon-gold.png');
   	width: 0;
   	height: 0;
-  	visibility: hidden;
+  	display: none;
 }
 
 .chatroom .nav-message-icon {
