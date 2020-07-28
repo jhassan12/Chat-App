@@ -44,7 +44,8 @@
   	-webkit-tap-highlight-color: transparent;
 }
 
-.auth .btn-primary:active {
+.auth .btn-primary:active,
+.auth .tapped {
 	background-color: white !important;
 	color: black !important;
 }
