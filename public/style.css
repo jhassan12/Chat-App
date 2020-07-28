@@ -2,9 +2,6 @@
 	background: rgba(0,0,0, 0.85);
 	overflow: auto;
 	font-family: "Helvetica", Times, serif;
-
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-  	-webkit-tap-highlight-color: transparent;
 }
 
 .auth h1 {
@@ -30,6 +27,11 @@
 	font-size: 0.8rem;
 }
 
+.auth a:active {
+	color: rgb(100, 100, 100);
+	text-decoration: none;
+}
+
 .auth .btn-primary {
 	box-shadow: none !important;
 	border: 1px solid white !important;
@@ -37,6 +39,9 @@
 	background-color: black;
 	white-space: nowrap;
 	width: 150px;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  	-webkit-tap-highlight-color: transparent;
 }
 
 .auth .btn-primary:active {
@@ -143,17 +148,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	bottom: -7px;
 }
 
-.auth .a-hover {
-	color: rgb(100, 100, 100);
-	text-decoration: none;
-}
-
-.auth .btn-primary-hover {
-	background-color: white!important;
-	color: black !important;
-}
-
-
 @media (hover: hover) {
 	.auth a:hover {
 		color: rgb(100, 100, 100);
@@ -183,10 +177,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		overflow-y: scroll;
 	}
 
-	.auth .btn-primary {
-		min-width: 300px;
-	}
-
 	.auth .form-group {
 		margin-left:auto;
    	 	margin-right:auto;
@@ -198,6 +188,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		background: black;
 		width: 500px;
 		padding-bottom: 75px;
+	}
+
+	.auth .btn-primary {
+		min-width: 300px;
 	}
 }
 

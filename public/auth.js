@@ -1,22 +1,5 @@
 $(document).ready(function() {
 	$('body *').on('touchstart', function (){});
-	
-	$('.btn-primary').on('touchstart', function(){
-		$(this).addClass('btn-primary-hover');
-	});	
-
-	$('.btn-primary').on('touchend', function(){
-		$(this).removeClass('btn-primary-hover');
-	});	
-
-	$('a').on('touchstart', function(){
-		$(this).addClass('a-hover');
-	});
-
-	$('a').on('touchend', function(){
-		$(this).removeClass('a-hover');
-	});
-
 
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
