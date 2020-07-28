@@ -6,25 +6,14 @@ $(window).bind("pageshow", function(event) {
     }
 });
 
-function preloadIcons() {
-	var img1, img2, img3, img4;
-
-	img1 = new Image();
-	img1.src = '/Images/x-icon.png';
-
-	img2 = new Image();
-	img2.src = '/Images/nav-message-icon-gold.png'
-
-	img3 = new Image();
-	img3.src = '/Images/send-icon.png';
-
-	img4 = new Image();
-	img4.src = '/Images/left-arrow.png';
-}
-
 </script>
 
-<body class="chatroom" onload="preloadIcons()">
+<img src="/Images/x-icon.png" style="display: none;">
+<img src="/Images/nav-message-icon-gold.png" style="display: none;">
+<img src="/Images/send-icon.png" style="display: none;">
+<img src="/Images/left-arrow.png" style="display: none;">
+
+<body class="chatroom">
 	<nav class="navbar navbar-expand-sm navbar-default">
 		<a class="navbar-brand ellipses" href="/room" id="username"><%=username%></a>
 
