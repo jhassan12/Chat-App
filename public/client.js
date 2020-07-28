@@ -405,6 +405,7 @@ function cancelSearch() {
 
 function searchMinimized() {
 	if ($('.dropdown-menu').hasClass('show')) {
+		$('.dropdown-menu').hide();
 		$('.nav-container').click();
 	}
 
