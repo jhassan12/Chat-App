@@ -610,7 +610,8 @@ body:after {
 	background-color: red;
 }
 
-.chatroom .nav-message-icon {
+.chatroom .nav-message-icon,
+.chatroom .nav-message-icon-hover {
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -620,6 +621,16 @@ body:after {
 	background-position: 50%, 50%;
 	cursor: pointer;
 	transition: background .1s linear;
+}
+
+.chatroom .nav-message-icon-hover {
+	display: none;
+	background: url('/Images/nav-message-icon-gold.png');
+	background-repeat: no-repeat;
+	background-position: 50%, 50%;
+	background-size: 50px;
+	width: 40px;
+	height: 40px;
 }
 
 .chatroom .nav-container {
@@ -1079,12 +1090,11 @@ body:after {
 }
 
 .chatroom .nav-container:active .nav-message-icon {
-	background: url('/Images/nav-message-icon-gold.png');
-	background-repeat: no-repeat;
-	background-position: 50%, 50%;
-	background-size: 50px;
-	width: 40px;
-	height: 40px;
+	display: none;
+}
+
+.chatroom .nav-container:active .nav-message-icon-hover {
+	display: block;
 }
 
 .chatroom .nav-link:active {
@@ -1142,12 +1152,11 @@ body:after {
 	}
 
 	.chatroom .nav-container:hover .nav-message-icon {
-		background: url('/Images/nav-message-icon-gold.png');
-		background-repeat: no-repeat;
-		background-position: 50%, 50%;
-		background-size: 50px;
-		width: 40px;
-		height: 40px;
+		display: none;
+	}
+
+	.chatroom .nav-container:hover .nav-message-icon-hover {
+		display: block;
 	}
 
 	.chatroom .nav-link:hover {
