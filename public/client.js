@@ -235,7 +235,6 @@ $(document).ready(function() {
 	});
 });
 
-
 function disableScroll() {
 	chatContainer.style.overflow = 'hidden';
 	scrollDisabled = true;

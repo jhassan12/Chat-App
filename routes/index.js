@@ -115,7 +115,7 @@ router.get('/room', (req, res) => {
 
 router.get('/logout', (req, res) => {
 	req.logout();
-	res.redirect('/login')
+	res.redirect('/login');
 });
 
 router.post('/login', setLoginCookie, passport.authenticate('local', {

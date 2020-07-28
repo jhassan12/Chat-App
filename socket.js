@@ -935,6 +935,11 @@ async function validateSocket(socket) {
 }
 
 async function validateConversation(username, conversationID) {
+	if (!username) {
+		socket.emit('logout');
+		return false;
+	}
+
 	var doesExist = await conversationExists(conversationID);
 	var isUserPartOfConversation = await conversationHasUser(username, conversationID);
 
@@ -960,7 +965,7 @@ function handleConnections(_io) {
 			const username = await getUsername(userID);
 			var validConversation;
 
-			if (!conversationID) {
+			if (!userID || !username || !conversationID) {
 				return;
 			}
 
