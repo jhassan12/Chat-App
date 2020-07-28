@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+	$('body *').on('touchstart', function (){});
+	
 	$('.btn-primary').on('touchstart', function(){
 		$(this).addClass('btn-primary-hover');
 	});	

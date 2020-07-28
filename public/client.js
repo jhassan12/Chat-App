@@ -27,8 +27,7 @@ var scrollDisabled = false;
 var activeElement = document;
 
 $(document).ready(function() {
-
-	document.addEventListener("touchstart", function(){}, true);
+	$('body *').on('touchstart', function (){});
 
 	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
@@ -62,7 +61,6 @@ $(document).ready(function() {
 	if(!('ontouchstart' in window)) {
   		$('[data-toggle="tooltip"]').tooltip();
 	}
-
 
 
 

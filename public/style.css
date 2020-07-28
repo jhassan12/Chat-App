@@ -34,7 +34,7 @@
 	background-color: black;
 	white-space: nowrap;
 	width: 150px;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
 }
 
 .auth .form-group {
@@ -1107,6 +1107,12 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	height: 40px;
 }
 
+.chatroom #send-message:active {
+	background: url('/Images/send-icon.png');
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 50%, 50%;
+}
 
 @media (hover: hover) {
 	.chatroom .search-option:hover {
