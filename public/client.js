@@ -27,6 +27,7 @@ var scrollDisabled = false;
 var activeElement = document;
 
 $(document).ready(function() {
+
 	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
 		$('#search').val('');
@@ -115,11 +116,11 @@ $(document).ready(function() {
 
 
 	$('#send-message').on('touchstart', function() {
-		$(this).addClass('send-message-hover');
+		$('#send-message').addClass('send-message-hover');
 	});
 
 	$('#send-message').on('touchend', function() {
-		$(this).removeClass('send-message-hover');
+		$('#send-message').removeClass('send-message-hover');
 	});
 
 
@@ -511,6 +512,10 @@ function cancelSearch() {
 }
 
 function searchMinimized() {
+	if ($('.dropdown-menu').hasClass('show')) {
+		$('.nav-container').click();
+	}
+
 	let height = $('.navbar').outerHeight();
 
 	$('#username').hide();
@@ -899,7 +904,6 @@ function loadSearchMessages(messages) {
 				changeRoom.call(recentMessage, $(recentMessage).data('conversationid'), {searchMessageID: messageID, messagesLoaded: numberOfMessagesLoaded});
 			}
 
-			$('#search').blur();
 			cancelSearch();
 			$('.navbar-toggler').click();
 		});
