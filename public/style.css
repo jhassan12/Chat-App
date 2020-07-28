@@ -203,7 +203,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	font-family: Arial, Helvetica;
 }
 
-body:after {
+.chatroom:after {
  	position: absolute; overflow: hidden; left: -50000px;
  	content: url('/Images/x-icon.png') url('/Images/nav-message-icon-gold.png') url('/Images/send-icon.png') url('/Images/left-arrow.png'); 
 }
@@ -317,7 +317,7 @@ body:after {
 }
 
 .chatroom .x-icon {
-	background: url('/Images/x-icon.png');
+	background-image: url('/Images/x-icon.png');
 	background-repeat: no-repeat;
 	background-size: 15px;
 	background-position: 50%, 50%;
@@ -616,7 +616,7 @@ body:after {
 	display: block;
 	width: 40px;
 	height: 40px;
-	background: url('/Images/nav-message-icon.png');
+	background-image: url('/Images/nav-message-icon.png');
 	background-repeat: no-repeat;
 	background-size: 50px;
 	background-position: 50%, 50%;
@@ -699,7 +699,7 @@ body:after {
 
 .chatroom #send-message {
 	display: block;
-	background: url('/Images/send-icon-outline.png');
+	background-image: url('/Images/send-icon-outline.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
@@ -967,7 +967,7 @@ body:after {
 
 .chatroom .redirect-icon {
 	display: inline-block;
-	background: url('/Images/left-arrow-outline.png');
+	background-image: url('/Images/left-arrow-outline.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 50%, 50%;
@@ -1083,7 +1083,7 @@ body:after {
 }
 
 .chatroom .nav-container:active .nav-message-icon {
-	background: url('/Images/nav-message-icon-gold.png');
+	background-image: url('/Images/nav-message-icon-gold.png');
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
 	background-size: 50px;
@@ -1097,7 +1097,7 @@ body:after {
 }
 
 .chatroom #send-message:active {
-	background: url('/Images/send-icon.png');
+	background-image: url('/Images/send-icon.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
@@ -1120,7 +1120,7 @@ body:after {
 }
 
 .chatroom .redirect-icon:active {
-	background: url('/Images/left-arrow.png');
+	background-image: url('/Images/left-arrow.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: 50%, 50%;
@@ -1146,7 +1146,7 @@ body:after {
 	}
 
 	.chatroom .nav-container:hover .nav-message-icon {
-		background: url('/Images/nav-message-icon-gold.png');
+		background-image: url('/Images/nav-message-icon-gold.png');
 		background-repeat: no-repeat;
 		background-position: 50%, 50%;
 		background-size: 50px;
@@ -1161,7 +1161,7 @@ body:after {
 
 
 	.chatroom #send-message:hover {
-		background: url('/Images/send-icon.png');
+		background-image: url('/Images/send-icon.png');
 		background-repeat: no-repeat;
 		background-size: 30px;
 		background-position: 50%, 50%;
@@ -1184,7 +1184,7 @@ body:after {
 	}
 
 	.chatroom .redirect-icon:hover {
-		background: url('/Images/left-arrow.png');
+		background-image: url('/Images/left-arrow.png');
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: 50%, 50%;
