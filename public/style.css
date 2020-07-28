@@ -204,8 +204,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom:after{
- display:none;
- content: url(/Images/x-icon.png) url(/Images/nav-message-icon.png) url(/Images/send-icon-outline.png) url(/Images/left-arrow-outline.png) url(/Images/nav-message-icon-gold.png) url(/Images/send-icon.png) url(/Images/left-arrow.png) 
+ 	display:none;
+ 	content: url('/Images/x-icon.png') url('/Images/nav-message-icon.png') url('/Images/send-icon-outline.png') url('/Images/left-arrow-outline.png') url('/Images/nav-message-icon-gold.png') url('/Images/send-icon.png') url('/Images/left-arrow.png'); 
 }
 
 .no-select {
