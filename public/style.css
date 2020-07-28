@@ -40,8 +40,8 @@
 	white-space: nowrap;
 	width: 150px;
 
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-  	-webkit-tap-highlight-color: transparent;
+	-webkit-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
 }
 
 .auth .btn-primary:active,
@@ -157,8 +157,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 	.auth .btn-primary:hover,
 	.auth .btn-primary:active {
-		background-color: white !important;
-		color: black !important;
+		box-shadow: 0 0 10px 0 #FFFFFF inset, 0 0 20px 2px #FFFFFF !important;
+ 		border: 1px solid #FFFFFF !important;
 	}
 }
 
@@ -199,6 +199,11 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
+}
+
+.chatroom:after{
+ display:none;
+ content: url(/Images/x-icon.png) url(/Images/nav-message-icon.png) url(/Images/send-icon-outline.png) url(/Images/left-arrow-outline.png) url(/Images/nav-message-icon-gold.png) url(/Images/send-icon.png) url(/Images/left-arrow.png) 
 }
 
 .no-select {
@@ -1049,6 +1054,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }
+}
+
+.chatroom .dropdown-item:active {
+	background: #393c40;
 }
 
 .chatroom .search-option:active {
