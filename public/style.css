@@ -148,6 +148,11 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	color: black !important;
 }
 
+.auth .btn-primary:active {
+	background-color: white !important;
+	color: black !important;
+}
+
 @media (hover: hover) {
 	.auth a:hover {
 		color: rgb(100, 100, 100);
@@ -1109,12 +1114,74 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	height: 40px;
 }
 
+.chatroom .search-option:active {
+	background-color: #393c40;
+}
+
+.chatroom .cancel-search:active { 
+	color: #D3D3D3 !important;
+}
+
+.chatroom .search-minimize .fa-search:active {
+	color: #D3D3D3;;
+}
+
+.chatroom #no-private-messages:active {
+	background-color: black;
+}
+
+.chatroom .nav-container:active .nav-message-icon {
+	background: url('/Images/nav-message-icon-gold.png');
+	background-repeat: no-repeat;
+	background-position: 50%, 50%;
+	background-size: 50px;
+	width: 40px;
+	height: 40px;
+}
+
+.chatroom .nav-link:active {
+	color: #D3D3D3;
+	text-decoration: none;
+}
+
 .chatroom #send-message:active {
 	background: url('/Images/send-icon.png');
 	background-repeat: no-repeat;
 	background-size: 30px;
 	background-position: 50%, 50%;
 }
+
+.chatroom .scroll-bottom .fa:actives {
+	color: #00a8e1;
+}
+
+.chatroom .message:active {
+	transform: scale(1.025);
+}
+
+.chatroom .delete-button:active {
+	color: red !important;
+}
+
+.chatroom .online-user:active {
+	background-color: rgba(105,105,105, 0.2);
+}
+
+.chatroom .redirect-icon:active {
+	background: url('/Images/left-arrow.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 50%, 50%;
+	width: 60px;
+	height: 40px;
+}
+
+
+
+
+
+
+
 
 @media (hover: hover) {
 	.chatroom .search-option:hover {
