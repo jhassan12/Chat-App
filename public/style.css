@@ -622,6 +622,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-position: 50%, 50%;
 	cursor: pointer;
 	transition: background .1s linear;
+	-webkit-backface-visibility: hidden;
 }
 
 .chatroom .nav-container {
@@ -1089,6 +1090,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-size: 50px;
 	width: 40px;
 	height: 40px;
+	-webkit-backface-visibility: hidden;
 }
 
 .chatroom .nav-link:active {
@@ -1152,6 +1154,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		background-size: 50px;
 		width: 40px;
 		height: 40px;
+		-webkit-backface-visibility: hidden;
 	}
 
 	.chatroom .nav-link:hover {
