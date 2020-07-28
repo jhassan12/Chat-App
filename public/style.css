@@ -34,7 +34,7 @@
 	background-color: black;
 	white-space: nowrap;
 	width: 150px;
-	-webkit-tap-highlight-color: white;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .auth .form-group {
@@ -146,18 +146,14 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	color: black !important;
 }
 
-.auth .btn-primary:active {
-	background-color: white !important;
-	color: black !important;
-}
-
 @media (hover: hover) {
 	.auth a:hover {
 		color: rgb(100, 100, 100);
 		text-decoration: none;
 	}
 
-	.auth .btn-primary:hover {
+	.auth .btn-primary:hover,
+	.auth .btn-primary:active {
 		background-color: white !important;
 		color: black !important;
 	}
