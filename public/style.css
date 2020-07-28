@@ -344,7 +344,9 @@ body:after {
 	z-index: 10000;
 
 	scrollbar-width: none;
-	-ms-overflow-style: none;s
+	-ms-overflow-style: none;
+
+	-webkit-overflow-scrolling: auto;
 }
 
 .chatroom .search-wrapper {
@@ -610,8 +612,7 @@ body:after {
 	background-color: red;
 }
 
-.chatroom .nav-message-icon,
-.chatroom .nav-message-icon-hover {
+.chatroom .nav-message-icon {
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -621,16 +622,6 @@ body:after {
 	background-position: 50%, 50%;
 	cursor: pointer;
 	transition: background .1s linear;
-}
-
-.chatroom .nav-message-icon-hover {
-	display: none;
-	background: url('/Images/nav-message-icon-gold.png');
-	background-repeat: no-repeat;
-	background-position: 50%, 50%;
-	background-size: 50px;
-	width: 40px;
-	height: 40px;
 }
 
 .chatroom .nav-container {
@@ -777,6 +768,8 @@ body:after {
 	overflow: auto;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
+
+	-webkit-overflow-scrolling: auto;
 }
 
 .chatroom .scroll-bottom {
@@ -1090,11 +1083,12 @@ body:after {
 }
 
 .chatroom .nav-container:active .nav-message-icon {
-	display: none;
-}
-
-.chatroom .nav-container:active .nav-message-icon-hover {
-	display: block;
+	background: url('/Images/nav-message-icon-gold.png');
+	background-repeat: no-repeat;
+	background-position: 50%, 50%;
+	background-size: 50px;
+	width: 40px;
+	height: 40px;
 }
 
 .chatroom .nav-link:active {
@@ -1152,11 +1146,12 @@ body:after {
 	}
 
 	.chatroom .nav-container:hover .nav-message-icon {
-		display: none;
-	}
-
-	.chatroom .nav-container:hover .nav-message-icon-hover {
-		display: block;
+		background: url('/Images/nav-message-icon-gold.png');
+		background-repeat: no-repeat;
+		background-position: 50%, 50%;
+		background-size: 50px;
+		width: 40px;
+		height: 40px;
 	}
 
 	.chatroom .nav-link:hover {
