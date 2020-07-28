@@ -613,11 +613,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .nav-message-icon:before {
+	position: absolute;
+	left: -9999999px;
 	content: url('/Images/nav-message-icon-gold.png');
-  	width: 0;
-  	height: 0;
-  	display: none;
-}
+ }
 
 .chatroom .nav-message-icon {
 	display: block;
