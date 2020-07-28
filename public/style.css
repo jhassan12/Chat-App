@@ -203,8 +203,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	font-family: Arial, Helvetica;
 }
 
-.chatroom:after{
- 	display:none;
+.chatroom:after {
+ 	 position: absolute; overflow: hidden; left: -50000px;
  	content: url('/Images/x-icon.png') url('/Images/nav-message-icon.png') url('/Images/send-icon-outline.png') url('/Images/left-arrow-outline.png') url('/Images/nav-message-icon-gold.png') url('/Images/send-icon.png') url('/Images/left-arrow.png'); 
 }
 
