@@ -203,11 +203,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	font-family: Arial, Helvetica;
 }
 
-.chatroom:after {
- 	 position:absolute; width:0; height:0; overflow:hidden; z-index: -1;
- 	content: url('/Images/x-icon.png') url('/Images/nav-message-icon.png') url('/Images/send-icon-outline.png') url('/Images/left-arrow-outline.png') url('/Images/nav-message-icon-gold.png') url('/Images/send-icon.png') url('/Images/left-arrow.png'); 
-}
-
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -305,6 +300,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	display: none;
 	cursor: pointer;
 	margin-bottom: 13px;
+}
+
+.chatroom .search-minimize .fa-search:before {
+	content: url('/Images/x-icon.png');
+  	width: 0;
+  	height: 0;
+  	visibility: hidden;
 }
 
 .chatroom .search-minimize .fa-search {
@@ -608,6 +610,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	left: 26px;
 	top: -2px;
 	background-color: red;
+}
+
+.chatroom .nav-message-icon:before {
+	content: url('/Images/nav-message-icon-gold.png');
+  	width: 0;
+  	height: 0;
+  	visibility: hidden;
 }
 
 .chatroom .nav-message-icon {
@@ -947,6 +956,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+}
+
+.chatroom .redirect-icon-container:before {
+	content: url('/Images/left-arrow.png');
+  	width: 0;
+  	height: 0;
+  	visibility: hidden;
 }
 
 .chatroom .redirect-icon-container {
