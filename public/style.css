@@ -99,7 +99,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	transition: all 0.1s ease;
+	transition: all .1s ease;
 }
 
 .auth .button-container {
@@ -295,7 +295,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	min-width: 40px;
 	height: 35px;
 	z-index: 0;
-	transition: border-color 0.2s;
+	transition: border-color .2s linear;
 }
 
 .chatroom .search-minimize {
@@ -307,7 +307,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 .chatroom .search-minimize .fa-search {
 	transform: scale(1.5); 
-	transition: color .1s linear;
+	transition: color .2s linear;
 }
 
 .chatroom .fa-search {
@@ -334,7 +334,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	height: 35px;
 	line-height: 20px;
 	float: left;
-	transition: border-color 0.2s;
+	transition: border-color .2s;
 	-webkit-backface-visibility: hidden;
 }
 
@@ -420,7 +420,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	height: 2px;
 	background-color: #FFFFFF;
 	display: block;
-	transition: all 0.2s;
+	transition: all .2s linear;
 	margin-top: 4px
 }
  
@@ -643,7 +643,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	box-shadow: none;
 	outline: none;
 	border: none;
-	transition: color .1s linear;
+	transition: color .2s linear;
 }
 
 .chatroom h6 {
@@ -702,7 +702,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	cursor: pointer;
 	width: 30px;
 	height: 100%;
-	transition: background .1s linear;
+	transition: background .2s linear;
 }
 
 .chatroom #user-input {
@@ -779,7 +779,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom .scroll-bottom .fa {
 	color: white;
 	cursor: pointer;
-	transition: color .1s linear;
+	transition: color .2s linear;
 }
 
 ::-webkit-scrollbar {
@@ -941,6 +941,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .redirect-container {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.chatroom .redirect-icon-container {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -950,10 +957,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	-ms-flex-align: center;
 	-webkit-align-items: center;
 	align-items: center;
-
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 }
 
 .chatroom .redirect-icon {
@@ -968,7 +971,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	outline: none;
 	border: none;
 	box-shadow: none;
-	transition: background .1s linear;
+	transition: background .2s linear;
 }
 
 .chatroom .online-user {

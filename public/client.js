@@ -55,6 +55,14 @@ $(document).ready(function() {
 		activeElement = e.target;
 	});
 
+	$('.dropdown').on('show.bs.dropdown', function() {
+    	$(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+  	});
+
+	 $('.dropdown').on('hide.bs.dropdown', function() {
+    	$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+  	});
+
 
 	if(!('ontouchstart' in window)) {
   		$('[data-toggle="tooltip"]').tooltip();
@@ -80,7 +88,7 @@ $(document).ready(function() {
 	$('#user-input').on('input', resize);
 
 	$('#user-input').keydown(function(e){	
-		if (e.key === 'Enter') {
+		if (e.keyCode === 13) {
 			sendMessage();
 
 			if(e.preventDefault) {
@@ -788,8 +796,10 @@ function loadSearchMessages(messages) {
 				changeRoom.call(recentMessage, $(recentMessage).data('conversationid'), {searchMessageID: messageID, messagesLoaded: numberOfMessagesLoaded});
 			}
 
-			cancelSearch();
-			$('.navbar-toggler').click();
+			if (!$('.navbar-toggler').hasClass('collapsed')) {
+				cancelSearch();
+				$('.navbar-toggler').click();
+			}
 		});
 
 		if (!$('*[data-messageID="' + messageID + '"]').exists()) {
