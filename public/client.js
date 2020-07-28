@@ -28,6 +28,8 @@ var activeElement = document;
 
 $(document).ready(function() {
 
+	document.addEventListener("touchstart", function(){}, true);
+
 	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
 		$('#search').val('');
@@ -173,9 +175,6 @@ $(document).ready(function() {
 		$(this).removeClass('redirect-icon-hover');
 	});
 
-
-
-	$('.redirect-container').hide();
 
 
 	$('.scroll-bottom .fa').on('click touchend', function(){
