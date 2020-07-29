@@ -403,17 +403,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .dropdown {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-
-	padding-right: 10px;
 	cursor: pointer;
 }
 
@@ -627,7 +616,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	color: white;
 	cursor: pointer;
 	padding-bottom: 2px;
-	padding-left: 10px;
+	padding-left: 4px;
 	transition: background .2s linear;
 }
 
@@ -637,6 +626,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .m-icons-wrapper {
+	padding-top: 3px;
 	width: 100%;
 }
 
