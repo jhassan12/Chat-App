@@ -198,6 +198,14 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
+
+html {
+	position: fixed;
+  	height: 100%;
+  	width: 100%;
+  	overflow: hidden;
+}
+
 .chatroom {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
@@ -346,7 +354,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 
-	-webkit-overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .chatroom .search-wrapper {
@@ -776,7 +784,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 
-	-webkit-overflow-scrolling: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .chatroom .scroll-bottom {
