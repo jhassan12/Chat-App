@@ -38,7 +38,7 @@ $(document).ready(function() {
 		$('#search').val('');
 		$('.search-dropdown .spinner-container').remove();	
 
-		deleteSearchTag();
+		devareSearchTag();
 	});
 
 	$(document).on('click touchend', '.redirect-container', function(){
@@ -163,7 +163,7 @@ $(document).ready(function() {
 			var caretPos = getCaretPosition($(this)[0]);
 
 			if (!caretPos && $('.search-tag').is(':visible')) {
-				deleteSearchTag();
+				devareSearchTag();
 			}
 		}
 	});
@@ -318,7 +318,7 @@ function addSearchTag(type) {
 }
 
 
-function deleteSearchTag() {
+function devareSearchTag() {
 	var value = $('#search').val();
 
 	$('.search-dropdown .spinner-container').remove();
@@ -332,7 +332,7 @@ function deleteSearchTag() {
 
 
 function hoverDropdown() {
-	let flag = false;
+	var flag = false;
 
 	if ($(this).hasClass('selected')) {
 		flag = true;
@@ -372,7 +372,7 @@ function getCaretPosition (oField) {
 
 
 function updateNavbar() {
-	let win = $(this);
+	var win = $(this);
 
 	if (win.width() > 575) {
 		$('#username').show();
@@ -416,7 +416,7 @@ function searchMinimized() {
 		$('.nav-container').click();
 	}
 
-	let height = $('.navbar').outerHeight();
+	var height = $('.navbar').outerHeight();
 
 	$('#username').hide();
 	$('.nav-item').hide();
@@ -425,7 +425,7 @@ function searchMinimized() {
 	$('.search-container').show();
 
 	if (!$('.cancel-search').exists()) {
-		let cancel = document.createElement('a');
+		var cancel = document.createElement('a');
 		cancel.className = 'cancel-search';
 		cancel.innerHTML = 'Cancel';
 
@@ -465,11 +465,11 @@ socket.on('send-message', function({_id, senderName, content, temporaryID}){
 });
 
 socket.on('disconnect-user', function(username){
-	deleteUser(username);
+	devareUser(username);
 });
 
-socket.on('delete-message', function(id){
-	deleteMessage(id);
+socket.on('devare-message', function(id){
+	devareMessage(id);
 });
 
 socket.on('add-user', function(username){
@@ -555,7 +555,7 @@ socket.on('remove-recent-message', function({title, content, conversationID, mes
 	removeRecentMessage(conversationID, title, content, date, unseen);
 });
 
-socket.on('delete-messages', function() {
+socket.on('devare-messages', function() {
 	clearAllMessages();
 });
 
@@ -794,8 +794,8 @@ function loadSpinner(element) {
 
 function loadSearchMessages(messages) {
 	messages.forEach(function({title, content, conversationID, messageID, unseen}){
-		let id = messageID || conversationID;
-		let date = getDateOfMessage(id);
+		var id = messageID || conversationID;
+		var date = getDateOfMessage(id);
 
 		const recentMessage = createRecentMessage(conversationID, title, content, date, unseen);
 		$(recentMessage).addClass('search-message');
@@ -923,29 +923,29 @@ function createMessage(username, msg, id, date, pending) {
 	if (username === currentUsername) {
 		messageContainer.className = 'message-container self'
 
-		let deleteButton = createDeleteButton();
+		var devareButton = createDevareButton();
 
 		if (pending) {
-			$(deleteButton).find('.delete-button').prop('disabled', true);
+			$(devareButton).find('.devare-button').prop('disabled', true);
 		}
 
-		message.prepend(deleteButton);
+		message.prepend(devareButton);
 		
 	}
 
 	return messageContainer;
 }
 
-function createDeleteButton() {
+function createDevareButton() {
 	const buttonContainer = document.createElement('div');
 	const button = document.createElement('button');
 	const conversationID = getConversationID();
 
-	buttonContainer.className = 'delete-header';
+	buttonContainer.className = 'devare-header';
 	buttonContainer.append(button);
 
-	button.className = "delete-button";
-	button.innerText = "Delete";
+	button.className = "devare-button";
+	button.innerText = "Devare";
 
 	$(button).on('click touchend', function(e){
 		socket.emit('message-removed', {
@@ -1047,7 +1047,7 @@ function updateMessage(username, msg, id, temporaryID, date) {
 	var pendingMessage = $('#' + temporaryID);
 
 	if (pendingMessage.exists()) {
-		$(pendingMessage).find('.delete-button').prop('disabled', false);
+		$(pendingMessage).find('.devare-button').prop('disabled', false);
 
 		pendingMessage.find('.user').html(username);
 		pendingMessage.find('.message-content').html(msg);
@@ -1078,7 +1078,7 @@ function appendMessage(username, msg, id, temporaryID, date, prepend) {
 	numberOfMessagesLoaded++;
 }
 
-function deleteMessage(id) {
+function devareMessage(id) {
 	if ($('#' + id).exists()) {
 		$('#' + id).fadeOut(300, function(){
 			$('#' + id).remove();
@@ -1105,7 +1105,7 @@ function updateUnseenMessages(value) {
 	var unseenContainer = $('.outter');
 
 	if (unseenContainer.exists()) {
-		let prevUnseen = parseInt($('.outter').html(), 10);
+		var prevUnseen = parseInt($('.outter').html(), 10);
 
 		if (!value) {
 			$('.outter').remove();
@@ -1130,8 +1130,8 @@ function loadRecentMessages(messages) {
 		if (message) {
 			const {title, content, conversationID, messageID, unseen} = message;
 
-			let id = messageID || conversationID;
-			let date = getDateOfMessage(id);
+			var id = messageID || conversationID;
+			var date = getDateOfMessage(id);
 
 			addRecentMessage(conversationID, title, content, date, unseen, false);
 			
@@ -1206,8 +1206,8 @@ function loadUsers(users) {
 
 function appendUser(username) {
 	if (!userExists(username)) {
-		let user = createUser(username);
-		let flag = false;
+		var user = createUser(username);
+		var flag = false;
 
 		$('.online-user-container').each(function(){
 			if (username < $(this).attr('id')) {
@@ -1223,7 +1223,7 @@ function appendUser(username) {
 	}
 }
 
-function deleteUser(username) {
+function devareUser(username) {
 	if ($('#' + username).exists()) {	
 		$('#' + username).remove();
 		numberOfUsersOnline--;
@@ -1422,7 +1422,7 @@ function clearAllMessages() {
 	numberOfMessagesLoaded = 0;
 }
 
-function deleteCookie(name, path) {
+function devareCookie(name, path) {
 	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path};`;
 }
 
