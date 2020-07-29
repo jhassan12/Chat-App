@@ -672,7 +672,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	right: 0;
 	bottom: 0;
 	width: 20%;
-	height: 100%;
+	height: 100% !important;
 	border: none;
 	border-left: 1px solid rgba(185, 185, 185, 0.4);
 	border-top: 1px solid rgba(185, 185, 185, 0.4);
@@ -689,7 +689,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	-ms-flex-align: center;
 	align-items: center;
 
-	width: 100%;
+	width: 100% !important;
 	height: 29px;
 }
 
@@ -1186,13 +1186,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 
 @media only screen and (max-device-width: 600px) and (orientation: portrait) {
-	.chatroom .container {
-		height: 99vh !important;
-	}
 
-	.chatroom .chat {
-		overflow: auto !important;
-	}
 }
 
 
