@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
-	//$('body *').on('touchstart', function (){}, {capture: true});
 
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');

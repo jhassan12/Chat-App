@@ -31,8 +31,6 @@ $(document).ready(function() {
 
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
-	//$('body *').bind('touchstart', function (){}, {passive: true});
-
 	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
 		$('#search').val('');
@@ -70,12 +68,9 @@ $(document).ready(function() {
     	$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
   	});
 
-
 	if(!('ontouchstart' in window)) {
   		$('[data-toggle="tooltip"]').tooltip();
 	}
-
-
 
 	$('.scroll-bottom .fa').on('click touchend', function(){
 		scrollBottomAnimation = true;
