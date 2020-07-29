@@ -198,6 +198,18 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
+html {
+    height  : 100%;
+    overflow: hidden;
+    position: relative;
+}
+body {
+    height  : 100%;
+    overflow: auto;
+    position: relative;
+    z-index: 2;
+}
+
 .chatroom {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;

@@ -1,8 +1,10 @@
 <script type="text/javascript">
-  $(window).scrollTo($('h1').offset.top);
+  function scrollToMiddle() {
+    $(window).scrollTo($('h1').offset.top);
+  }
 </script>
 
-<body class="auth">
+<body class="auth" onload="scrollToMiddle()">
   <div class="container">
 
       <h1 class="page-header text-center"> Sign up </h1>  
