@@ -3,6 +3,7 @@ html {
     overflow: hidden;
     position: relative;
 }
+
 body {
     height: 100%;
     overflow: auto;
@@ -145,7 +146,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .auth .container {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -173,6 +174,15 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	.auth .btn-primary:hover {
 		box-shadow: 0 0 10px 0 #FFFFFF inset, 0 0 20px 2px #FFFFFF !important;
  		border: 1px solid #FFFFFF !important;
+	}
+}
+
+@media only screen and (max-height: 390px) {
+	.auth .container {
+		display: block;
+		position: absolute;
+		top: 200px;
+		margin-bottom: 10px;
 	}
 }
 
