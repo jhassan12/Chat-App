@@ -1193,6 +1193,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		max-height: 1000px;
 	}
 
+	.chatroom .no-messages {
+		text-align: left;
+	}
+
 	.chatroom .navbar {
 		min-width: 100%;
 	}
