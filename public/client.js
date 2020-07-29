@@ -966,7 +966,7 @@ function createUser(username) {
 
 	onlineUser.className = 'online-user ellipses';
 	onlineUser.innerText = username;
-	onlineUserContainer.append(onlineUser);
+	$(onlineUserContainer).append(onlineUser);
 
 	if (username !== currentUsername) {
 		$(onlineUserContainer).css('cursor', 'pointer');
@@ -1039,7 +1039,7 @@ function appendPendingMessage(username, msg, id) {
 	const messageContainer = createMessage(username, msg, id, null, true);
 	$(messageContainer).css({opacity: 0.4});
 
-	chatContainer.append(messageContainer);
+	$(chatContainer).append(messageContainer);
 	chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
@@ -1065,9 +1065,9 @@ function appendMessage(username, msg, id, temporaryID, date, prepend) {
 		const messageContainer = createMessage(username, msg, id, date, false);
 
 		if (prepend) {
-			chatContainer.prepend(messageContainer);
+			$(chatContainer).prepend(messageContainer);
 		} else {
-			chatContainer.append(messageContainer);
+			$(chatContainer).append(messageContainer);
 
 			if (!idleScrollState) {	
 				chatContainer.scrollTop = chatContainer.scrollHeight;
