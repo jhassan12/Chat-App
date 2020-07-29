@@ -1188,8 +1188,13 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 @media only screen and (max-device-width: 600px) and (orientation: portrait) {
 	.chatroom .container,
 	.chatroom .chat-container {
-		overflow: hidden;
+		overflow: hidden !important;
 	}
+
+	.chatroom .container {
+		height: 99vh !important;
+	}
+
 	.chatroom .chat {
 		overflow: auto !important;
 	}
