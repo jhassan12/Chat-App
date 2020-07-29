@@ -29,6 +29,13 @@ var activeElement = document;
 $(document).ready(function() {
 	$('body *').on('touchstart', function (){});
 
+			$(document).bind(
+		'touchmove',
+		function(e) {
+		e.preventDefault();
+		}
+		);
+
 	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
 		$('#search').val('');
@@ -234,6 +241,7 @@ $(document).ready(function() {
 		$('#search').focus();
 	});
 });
+
 
 function disableScroll() {
 	chatContainer.style.overflow = 'hidden';
