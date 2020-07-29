@@ -39,7 +39,7 @@ $(document).ready(function() {
 				}
 
 				if (text === $('#cpassword').val()) {
-					let errorDiv = $("div[data-type-error='cpassword']");
+					var errorDiv = $("div[data-type-error='cpassword']");
 
 					if (errorDiv.exists() && errorDiv.text() === 'Passwords do not match') {
 						errorDiv.remove();
