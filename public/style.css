@@ -1195,6 +1195,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 	.chatroom .no-messages {
 		text-align: left;
+		padding-left: 10px;
 	}
 
 	.chatroom .navbar {
