@@ -727,7 +727,13 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 	const messageDate = document.createElement('div');
 	const unseenMessages = document.createElement('div');
 
-	$(recentMessageContainer).on('click', () => changeRoom.call(recentMessageContainer, recentMessageContainer.id));
+	$(recentMessageContainer).on('click', () => {
+		changeRoom.call(recentMessageContainer, recentMessageContainer.id)
+
+		if (!$('.navbar-toggler').hasClass('collapsed')) {
+			$('.navbar-toggler').click();
+		}
+	});
 
 	$(recentMessageContainer).hover(hoverDropdown);
 

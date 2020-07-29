@@ -1,3 +1,15 @@
+html {
+    height  : 100%;
+    overflow: hidden;
+    position: relative;
+}
+body {
+    height  : 100%;
+    overflow: auto;
+    position: relative;
+    z-index: 2;
+}
+
 .auth {
 	background: rgba(0,0,0, 0.85);
 	overflow: auto;
@@ -198,16 +210,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
-html {
-    height  : 100%;
-    overflow: hidden;
-    position: relative;
-}
-body {
-    height  : 100%;
-    overflow: auto;
-    position: relative;
-    z-index: 2;
+.tooltip {
+    position: fixed !important;
 }
 
 .chatroom {
@@ -1206,11 +1210,10 @@ body {
 @media only screen and (max-width: 575px) {
 	.chatroom .container {
 		position: relative;
-		padding: 0;
 		top: 0;
 		left: 0;
 		min-width: 100%;
-		height: 100vh;
+		height: 99vh;
 		max-height: 1000px;
 	}
 
