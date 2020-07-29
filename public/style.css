@@ -1,18 +1,5 @@
-html {
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-body {
-    height: 100%;
-    overflow: auto;
-    position: relative;
-    z-index: 2;
-}
-
 .auth {
-	background-color: rgba(0,0,0, 0.85) !important;
+	background: rgba(0,0,0, 0.85);
 	overflow: auto;
 	font-family: "Helvetica", Times, serif;
 }
@@ -1196,9 +1183,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 
-@media only screen and (max-device-width: 575px) and (orientation: portrait) {
+@media only screen and (max-device-width: 600px) and (orientation: portrait) {
 	.chatroom .container {
 		min-height: 99vh !important; 
+		height: 99vh !important;
 	}
 
 	.chatroom .chat {
