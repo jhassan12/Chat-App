@@ -48,6 +48,14 @@ $(document).ready(function() {
 		updateNavbar();
 	});
 
+	$(document).on("touchmove", function(e){
+   		e.preventDefault();
+	});
+
+	$('.d-menu', '.chat', 'body').on('touchmove', function(e){
+		e.stopPropagation();
+	});
+
 
 	$(document).keydown((e) => arrowKeyScroll(e));
 
