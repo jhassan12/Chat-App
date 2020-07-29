@@ -48,14 +48,23 @@ $(document).ready(function() {
 		updateNavbar();
 	});
 
-	$(document).on("touchmove", function(e){
-   		e.preventDefault();
+	$('body', 'd-menu', '.chat').on('touchstart', function(event) {
+	    this.allowUp = (this.scrollTop > 0);
+	    this.allowDown = (this.scrollTop < this.scrollHeight - this.clientHeight);
+	    this.slideBeginY = event.pageY;
 	});
 
-	$('.d-menu', '.chat', 'body').on('touchmove', function(e){
-		e.stopPropagation();
+	$('body', 'd-menu', '.chat').on('touchmove', function(event) {
+	    var up = (event.pageY > this.slideBeginY);
+	    var down = (event.pageY < this.slideBeginY);
+	    this.slideBeginY = event.pageY;
+	    if ((up && this.allowUp) || (down && this.allowDown)) {
+	        event.stopPropagation();
+	    }
+	    else {
+	        event.preventDefault();
+	    }
 	});
-
 
 	$(document).keydown((e) => arrowKeyScroll(e));
 
