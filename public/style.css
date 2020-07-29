@@ -1187,8 +1187,12 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	.chatroom .container {
 		height: 99vh;
 		min-height: 99vh;
+	}
+
+	.chatroom .chat-container {
 		overflow: hidden !important;
 	}
+
 	.chatroom .chat {
 		overflow: auto !important;
 	}
