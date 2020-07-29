@@ -105,6 +105,10 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/room/:conversationID', ensureAuthenticated, handleValidation, (req, res) => {
+	res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+	res.set('Pragma', 'no-cache');
+	res.set('Expires', '0');
+
 	res.clearCookie('newauth');
 	res.render('room', {username: req.user.username, roomName: 'Community'});
 });
