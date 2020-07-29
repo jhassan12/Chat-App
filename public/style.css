@@ -1183,10 +1183,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 
-@media only screen and (max-device-width: 575px) and (orientation: portrait) {
+@media only screen and (max-device-width: 600px) and (orientation: portrait) {
 	.chatroom .container {
-		min-height: 99vh !important; 
-		height: 99vh !important;
+		min-height: 99% !important; 
+		height: 99% !important;
 	}
 
 	.chatroom .chat {
