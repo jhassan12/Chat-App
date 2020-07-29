@@ -5,6 +5,18 @@
 </script>
 
 <body class="auth" onload="scrollToMiddle()">
+
+  <style type="text/css">
+    @media only screen and (max-height: 390px) {
+      .auth .container {
+          display: block;
+          position: absolute;
+          top: 200px;
+          margin-bottom: 10px;
+      }
+    }
+  </style>
+
   <div class="container">
     <% if (successMessage.length > 0) { %>
     <div class="alert alert-success">

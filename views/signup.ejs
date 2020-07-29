@@ -5,8 +5,20 @@
 </script>
 
 <body class="auth" onload="scrollToMiddle()">
-  <div class="container">
+  
+  <style type="text/css">
+    @media only screen and (max-height: 470px) {
+      .auth .container {
+        display: block;
+        position: absolute;
+        top: 250px;
+        margin-bottom: 10px;
+      } 
+    }
+  </style>
 
+
+  <div class="container">
       <h1 class="page-header text-center"> Sign up </h1>  
         <form method="POST" autocomplete="off" spellcheck="false">
           <div class="form-group">
