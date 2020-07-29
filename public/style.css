@@ -177,11 +177,11 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 }
 
-@media only screen and (max-height: 390px) {
+@media only screen and (max-height: 470px) {
 	.auth .container {
 		display: block;
 		position: absolute;
-		top: 200px;
+		top: 250px;
 		margin-bottom: 10px;
 	}
 }
