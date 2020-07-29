@@ -206,7 +206,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
 	-webkit-overflow-scrolling: touch;
-	height: 100% !important;
 }
 
 .chatroom:after {
@@ -1182,10 +1181,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 
 @media only screen and (max-device-width: 600px) and (orientation: portrait) {
-	.chatroom .container {
-		height: 99vh !important;
-	}
-
 	.chatroom .chat {
 		overflow: auto !important;
 	}
