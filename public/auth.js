@@ -1,13 +1,6 @@
 $(document).ready(function() {
-	$('body *').on('touchstart', function (){});
-
-	$('.btn-primary').on('touchstart', function(){
-		$(this).addClass('tapped');
-	});
-
-	$('.btn-primary').on('touchend', function(){
-		$(this).removeClass('tapped');
-	});
+	document.addEventListener('touchstart', function(){}, {passive: true});
+	//$('body *').on('touchstart', function (){}, {capture: true});
 
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');

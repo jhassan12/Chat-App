@@ -29,7 +29,9 @@ var activeElement = document;
 $(document).ready(function() {
 	var windowWidth = $(window).width();
 
-	$('body *').on('touchstart', function (){});
+	document.addEventListener('touchstart', function(){}, {passive: true});
+
+	//$('body *').bind('touchstart', function (){}, {passive: true});
 
 	$(document).on('click touchend', '.x-icon', function(e){	
 		$('.search-icon-container .fa').attr('class', 'fa fa-search');
@@ -45,14 +47,16 @@ $(document).ready(function() {
 		requestCommunity();
 	});
 
-	$(window).on('resize', function(){
+	$(window).on('resize', function() {
 		if ($(window).width() != windowWidth) {
 			resize();
 			updateNavbar();
         }
 	});
 
-	$(document).keydown((e) => arrowKeyScroll(e));
+	$(document).keydown(function(e) {
+		arrowKeyScroll(e);
+	});
 
 	$(document).on('click touchend', function(e){
 		activeElement = e.target;
@@ -730,7 +734,7 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 	const messageDate = document.createElement('div');
 	const unseenMessages = document.createElement('div');
 
-	$(recentMessageContainer).on('click', () => {
+	$(recentMessageContainer).on('click', function() {
 		changeRoom.call(recentMessageContainer, recentMessageContainer.id)
 
 		if (!$('.navbar-toggler').hasClass('collapsed')) {
@@ -799,7 +803,7 @@ function loadSearchMessages(messages) {
 		$(recentMessage).attr('data-messageID', messageID);
 		$(recentMessage).removeAttr('id');
 
-		$(recentMessage).unbind('click').bind('click', () => {
+		$(recentMessage).unbind('click').bind('click', function() {
 			if ($('#' + messageID).exists()) {
 				scrollToMessage(messageID);
 			} else {
