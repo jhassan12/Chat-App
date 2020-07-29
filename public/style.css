@@ -205,6 +205,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 .chatroom {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
+	-webkit-overflow-scrolling: touch;
+	height: 100% !important;
 }
 
 .chatroom:after {
@@ -349,8 +351,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-
-	-webkit-overflow-scrolling: touch;
 }
 
 .chatroom .search-wrapper {
@@ -764,8 +764,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	overflow: auto;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-
-	-webkit-overflow-scrolling: touch;
 }
 
 .chatroom .scroll-bottom {
