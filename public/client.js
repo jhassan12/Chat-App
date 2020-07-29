@@ -27,6 +27,8 @@ var scrollDisabled = false;
 var activeElement = document;
 
 $(document).ready(function() {
+	var windowWidth = $(window).width();
+
 	$('body *').on('touchstart', function (){});
 
 	$(document).on('click touchend', '.x-icon', function(e){	
@@ -44,8 +46,10 @@ $(document).ready(function() {
 	});
 
 	$(window).on('resize', function(){
-		resize();
-		updateNavbar();
+		if ($(window).width() != windowWidth) {
+			resize();
+			updateNavbar();
+        }
 	});
 
 	$(document).keydown((e) => arrowKeyScroll(e));
