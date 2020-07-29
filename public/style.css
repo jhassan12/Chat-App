@@ -1196,13 +1196,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 
-@media only screen and (max-device-width: 600px) and (orientation: portrait) {
-	.chatroom .chat {
-		overflow: auto !important;
-	}
-}
-
-
 @media only screen and (max-width: 575px) {
 	.chatroom .container {
 		position: relative;
