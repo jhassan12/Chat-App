@@ -1256,7 +1256,7 @@ function setPlaceholderText(text) {
 	var words = text.split(" ");
 
 	if ($(window).width() < 600) {
-    	$('#user-input').attr('placeholder', words[words.length - 1]);
+    	$('#user-input').attr('placeholder', 'Send message');
     } else {
     	$('#user-input').attr('placeholder', text);
     }
