@@ -712,7 +712,7 @@ function addNoMessagesFound(element) {
 	if (!$('.no-messages').exists()) {
 		const container = createNoMessagesFound();
 
-		element.append(container);
+		$(element).append(container);
 	} 
 }
 function createNoMessagesFound() {
@@ -785,9 +785,9 @@ function loadSpinner(element) {
 	$(spinner).hide();
 
 	if (element === chatContainer) {
-		element.prepend(spinner);
+		$(element).prepend(spinner);
 	} else {
-		element.append(spinner);
+		$(element).append(spinner);
 	}
 }
 
@@ -868,12 +868,12 @@ function createSpinner() {
 	rect3.className = "rect3";
 	rect4.className = "rect4";
 
-	spinner.append(rect1);
-	spinner.append(rect2);
-	spinner.append(rect3);
-	spinner.append(rect4);
+	$(spinner).append(rect1);
+	$(spinner).append(rect2);
+	$(spinner).append(rect3);
+	$(spinner).append(rect4);
 
-	spinnerContainer.append(spinner);
+	$(spinnerContainer).append(spinner);
 
 	return spinnerContainer;
 }
@@ -900,25 +900,25 @@ function createMessage(username, msg, id, date, pending) {
 	user.className = "user ellipses";
 	userContainer.className = "user-header";
 	user.innerText = username;
-	userContainer.append(user);
-	contentContainer.append(userContainer);
+	$(userContainer).append(user);
+	$(contentContainer).append(userContainer);
 
 	messageContent.className = "message-content";
 	messageContent.innerText = msg;
-	contentContainer.append(messageContent);
-	message.append(contentContainer);
+	$(contentContainer).append(messageContent);
+	$(message).append(contentContainer);
 
 	dateContainer.className = 'date-container';
 	dateContent.className = 'date';
-	dateContainer.append(dateContent);
+	$(dateContainer).append(dateContent);
 
 	if (!pending) {
-		dateContent.append(date);
+		$(dateContent).append(date);
 	}
 
-	message.append(dateContainer);
+	$(message).append(dateContainer);
 
-	messageContainer.append(message);
+	$(messageContainer).append(message);
 
 	if (username === currentUsername) {
 		messageContainer.className = 'message-container self'
@@ -929,7 +929,7 @@ function createMessage(username, msg, id, date, pending) {
 			$(deleteButton).find('.delete-button').prop('disabled', true);
 		}
 
-		message.prepend(deleteButton);
+		$(message).prepend(deleteButton);
 		
 	}
 
@@ -942,7 +942,7 @@ function createDeleteButton() {
 	const conversationID = getConversationID();
 
 	buttonContainer.className = 'delete-header';
-	buttonContainer.append(button);
+	$(buttonContainer).append(button);
 
 	button.className = "delete-button";
 	button.innerText = "Delete";
