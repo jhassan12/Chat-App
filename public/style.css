@@ -1,5 +1,5 @@
 .auth {
-	background-color: rgba(0,0,0, 0.85);
+	background: rgba(0,0,0, 0.85);
 	overflow: auto;
 	font-family: "Helvetica", Times, serif;
 }
@@ -796,6 +796,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	border-right: 1px solid rgba(185, 185, 185, 0.4);
 	border-bottom: 1px solid rgba(185, 185, 185, 0.4);
 	background-color: rgba(0,0,0, 0.4);
+	overflow: hidden;
 }
 
 .chatroom h6 {
@@ -840,6 +841,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	height: 85vh;
 	min-height: 560px;
 	padding-bottom: 10px;
+	overflow: hidden;
 }
 
 .chatroom .online-users {
@@ -1184,11 +1186,10 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 
 @media only screen and (max-device-width: 600px) and (orientation: portrait) {
-	.chatroom .container {
-		min-height: 99% !important; 
-		height: 99% !important;
+	.chatroom .container,
+	.chatroom .chat-container {
+		overflow: hidden;
 	}
-
 	.chatroom .chat {
 		overflow: auto !important;
 	}
@@ -1202,7 +1203,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		left: 0;
 		min-width: 100%;
 		height: 99vh;
-		max-height: 1000px;
 	}
 
 	.chatroom .navbar {
