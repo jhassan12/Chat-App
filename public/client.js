@@ -38,7 +38,7 @@ $(document).ready(function() {
 		$('#search').val('');
 		$('.search-dropdown .spinner-container').remove();	
 
-		devareSearchTag();
+		deleteSearchTag();
 	});
 
 	$(document).on('click touchend', '.redirect-container', function(){
@@ -163,7 +163,7 @@ $(document).ready(function() {
 			var caretPos = getCaretPosition($(this)[0]);
 
 			if (!caretPos && $('.search-tag').is(':visible')) {
-				devareSearchTag();
+				deleteSearchTag();
 			}
 		}
 	});
@@ -318,7 +318,7 @@ function addSearchTag(type) {
 }
 
 
-function devareSearchTag() {
+function deleteSearchTag() {
 	var value = $('#search').val();
 
 	$('.search-dropdown .spinner-container').remove();
@@ -465,11 +465,11 @@ socket.on('send-message', function({_id, senderName, content, temporaryID}){
 });
 
 socket.on('disconnect-user', function(username){
-	devareUser(username);
+	deleteUser(username);
 });
 
-socket.on('devare-message', function(id){
-	devareMessage(id);
+socket.on('delete-message', function(id){
+	deleteMessage(id);
 });
 
 socket.on('add-user', function(username){
@@ -555,7 +555,7 @@ socket.on('remove-recent-message', function({title, content, conversationID, mes
 	removeRecentMessage(conversationID, title, content, date, unseen);
 });
 
-socket.on('devare-messages', function() {
+socket.on('delete-messages', function() {
 	clearAllMessages();
 });
 
@@ -923,29 +923,29 @@ function createMessage(username, msg, id, date, pending) {
 	if (username === currentUsername) {
 		messageContainer.className = 'message-container self'
 
-		var devareButton = createDevareButton();
+		var deleteButton = createDeleteButton();
 
 		if (pending) {
-			$(devareButton).find('.devare-button').prop('disabled', true);
+			$(deleteButton).find('.delete-button').prop('disabled', true);
 		}
 
-		message.prepend(devareButton);
+		message.prepend(deleteButton);
 		
 	}
 
 	return messageContainer;
 }
 
-function createDevareButton() {
+function createDeleteButton() {
 	const buttonContainer = document.createElement('div');
 	const button = document.createElement('button');
 	const conversationID = getConversationID();
 
-	buttonContainer.className = 'devare-header';
+	buttonContainer.className = 'delete-header';
 	buttonContainer.append(button);
 
-	button.className = "devare-button";
-	button.innerText = "Devare";
+	button.className = "delete-button";
+	button.innerText = "Delete";
 
 	$(button).on('click touchend', function(e){
 		socket.emit('message-removed', {
@@ -1047,7 +1047,7 @@ function updateMessage(username, msg, id, temporaryID, date) {
 	var pendingMessage = $('#' + temporaryID);
 
 	if (pendingMessage.exists()) {
-		$(pendingMessage).find('.devare-button').prop('disabled', false);
+		$(pendingMessage).find('.delete-button').prop('disabled', false);
 
 		pendingMessage.find('.user').html(username);
 		pendingMessage.find('.message-content').html(msg);
@@ -1078,7 +1078,7 @@ function appendMessage(username, msg, id, temporaryID, date, prepend) {
 	numberOfMessagesLoaded++;
 }
 
-function devareMessage(id) {
+function deleteMessage(id) {
 	if ($('#' + id).exists()) {
 		$('#' + id).fadeOut(300, function(){
 			$('#' + id).remove();
@@ -1128,7 +1128,13 @@ function updateUnseenMessages(value) {
 function loadRecentMessages(messages) {
 	messages.forEach(function(message){
 		if (message) {
-			const {title, content, conversationID, messageID, unseen} = message;
+			const title = message.title;
+			const content = message.content;
+			const conversationID = message.conversationID;
+			const messageID = message.messageID;
+			const unseen = message.unseen;
+			
+			//const {title, content, conversationID, messageID, unseen} = message;
 
 			var id = messageID || conversationID;
 			var date = getDateOfMessage(id);
@@ -1223,7 +1229,7 @@ function appendUser(username) {
 	}
 }
 
-function devareUser(username) {
+function deleteUser(username) {
 	if ($('#' + username).exists()) {	
 		$('#' + username).remove();
 		numberOfUsersOnline--;
@@ -1422,7 +1428,7 @@ function clearAllMessages() {
 	numberOfMessagesLoaded = 0;
 }
 
-function devareCookie(name, path) {
+function deleteCookie(name, path) {
 	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path};`;
 }
 

@@ -919,7 +919,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .message-content {
-	margin: 0px;;
+	margin: 0px;
 }
 
 .chatroom .date-container {
@@ -1067,7 +1067,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 }
 
 .chatroom .search-minimize .fa-search:active {
-	color: #D3D3D3;;
+	color: #D3D3D3;
 }
 
 .chatroom #no-private-messages:active {
@@ -1125,7 +1125,7 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	}
 
 	.chatroom .search-minimize .fa-search:hover {
-		color: #D3D3D3;;
+		color: #D3D3D3;
 	}
 
 	.chatroom #no-private-messages:hover {
