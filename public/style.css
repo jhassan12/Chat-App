@@ -12,7 +12,7 @@ body {
 }
 
 .auth {
-	background: rgba(0,0,0, 0.85);
+	background-color: rgba(0,0,0, 0.85) !important;
 	overflow: auto;
 	font-family: "Helvetica", Times, serif;
 }
