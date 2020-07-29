@@ -48,24 +48,6 @@ $(document).ready(function() {
 		updateNavbar();
 	});
 
-	$('body', 'd-menu', '.chat').on('touchstart', function(event) {
-	    this.allowUp = (this.scrollTop > 0);
-	    this.allowDown = (this.scrollTop < this.scrollHeight - this.clientHeight);
-	    this.slideBeginY = event.pageY;
-	});
-
-	$('body', 'd-menu', '.chat').on('touchmove', function(event) {
-	    var up = (event.pageY > this.slideBeginY);
-	    var down = (event.pageY < this.slideBeginY);
-	    this.slideBeginY = event.pageY;
-	    if ((up && this.allowUp) || (down && this.allowDown)) {
-	        event.stopPropagation();
-	    }
-	    else {
-	        event.preventDefault();
-	    }
-	});
-
 	$(document).keydown((e) => arrowKeyScroll(e));
 
 	$(document).on('click touchend', function(e){
