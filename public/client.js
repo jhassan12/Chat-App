@@ -755,15 +755,15 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 	messageContent.className = 'recent-message-content ellipses';
 	messageContent.innerHTML = content;
 
-	leftContainer.append(messageTitle);
-	leftContainer.append(messageContent);
+	$(leftContainer).append(messageTitle);
+	$(leftContainer).append(messageContent);
 
 	rightContainer.className = 'right-container';
 
 	messageDate.className = 'recent-message-date';
 	messageDate.innerHTML = date;
 
-	rightContainer.append(messageDate);
+	$(rightContainer).append(messageDate);
 
 	if (unseen) {
 		$(recentMessageContainer).addClass('unseen');
@@ -771,11 +771,11 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 		unseenMessages.className = 'unseen-messages inner';
 		unseenMessages.innerHTML = unseen;
 
-		rightContainer.append(unseenMessages);
+		$(rightContainer).append(unseenMessages);
 	}
 
-	recentMessageContainer.append(leftContainer);
-	recentMessageContainer.append(rightContainer);
+	$(recentMessageContainer).append(leftContainer);
+	$(recentMessageContainer).append(rightContainer);
 
 	return recentMessageContainer;
 }
@@ -1133,7 +1133,7 @@ function loadRecentMessages(messages) {
 			const conversationID = message.conversationID;
 			const messageID = message.messageID;
 			const unseen = message.unseen;
-			
+
 			//const {title, content, conversationID, messageID, unseen} = message;
 
 			var id = messageID || conversationID;
