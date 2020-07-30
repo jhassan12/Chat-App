@@ -47,9 +47,11 @@ $(document).ready(function() {
 
 	$(window).on('resize', function() {
 		if ($(window).width() != windowWidth) {
-			resize();
-			updateNavbar();
+			chatContainer.scrollTop = chatContainer.scrollHeight;
         }
+
+        resize();
+		updateNavbar();
 	});
 
 	$(document).keydown(function(e) {
@@ -388,8 +390,6 @@ function updateNavbar() {
 	} else {
 		searchMinimized();
 	}
-
-	chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
 function cancelSearch() {
@@ -990,8 +990,8 @@ function createUser(username) {
 
 
 function sendMessage() {
-	if (inputField.value.trim().length == 0) {
-		clearInput();
+	if (!inputField.value.trim().length) {
+		inputField.value = inputField.value.trim();
 		return;
 	}
 
@@ -1264,7 +1264,12 @@ function updateTitle() {
 function setPlaceholderText(text) {
 	var words = text.split(" ");
 
-    $('#user-input').attr('placeholder', text);
+	if ($(window).height() < 500) {
+		$('#user-input').attr('placeholder', 'Send message');
+	} else {
+		 $('#user-input').attr('placeholder', text);
+	}
+   
 	$('.room-name').html(words[words.length - 1]);
 
 	updateTitle();
