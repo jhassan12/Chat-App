@@ -1324,17 +1324,17 @@ function resize() {
 	const inputHeight = inputField.scrollHeight;
 	const diff =  inputHeight - prevHeight;
 
-
-	if (diff > 0) {
-		chatContainer.scrollTop += 50;
-	}
-
 	$('.input-fields-container').outerHeight(inputHeight);
 	$('.button-container').outerHeight(inputHeight);
 	$(inputField).outerHeight(inputHeight);
 
 
 	$(chatContainer).outerHeight($('.chat-container').outerHeight() - $('.input-fields-container').outerHeight() - $('.room-name').outerHeight() - 2);
+
+	if (diff > 0) {
+		chatContainer.scrollTop += diff;
+	}
+
 }
 
 
