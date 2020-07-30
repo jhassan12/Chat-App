@@ -1,15 +1,6 @@
 $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
-	$(window).load($.debounce(200,function(){
-	    $('input:-webkit-autofill').each(function(){
-	        if (!$(this).val().length) {
-	            $(this).focus();
-	            $(this).blur();
-	        }
-	    });
-	}));
-
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
 		
