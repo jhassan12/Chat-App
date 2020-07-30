@@ -2,12 +2,16 @@ $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
 	$(window).load(function(){
-	   $('input').each(function(element){
-	   		if (element.val().length) {
-	   			element.focus();
-	   			element.blur();
+	   $('input').each(function(){
+	
+	   		if ($('input').val().length) {
+	   			$('input').focus();
+	   			$('input').blur();
 	   		}
 	   });
+
+	   $('.account-error').remove();
+	   $('input').css('border-bottom-color', 'white');
 	});
 
 	$('input').on('focusout', function(){
