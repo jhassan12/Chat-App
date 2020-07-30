@@ -4,7 +4,8 @@ $(document).ready(function() {
 	$(window).load($.debounce(200,function(){
 	    $('input:-webkit-autofill').each(function(){
 	        if (!$(this).val().length) {
-	            $(this).find('.floating-label-content').css({'font-size': '12px', 'transform': 'translateY(-150%)'});
+	            $(this).focus();
+	            $(this).blur();
 	        }
 	    });
 	}));
