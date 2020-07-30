@@ -28,7 +28,7 @@
     <% } %> 
 
       <h1 class="page-header text-center"> Login </h1>  
-        <form method="POST" spellcheck="false">
+        <form method="POST" autocomplete="off" spellcheck="false">
           <div class = "form-group">
             <input type="text" class="form-control" value="<%= enteredUsername ? enteredUsername : '' %>" name="username" id="username" placeholder=" "> 
             <label for="username" class="floating-label">
@@ -47,7 +47,7 @@
           </div>
 
           <div class="form-group">
-            <input type="password" class="form-control" name="password" id="password" placeholder=" ">
+            <input type="password" class="form-control" name="password" autocomplete="new-password" id="password" placeholder=" ">
             <label for="password" class="floating-label">
               <span class="floating-label-content"> Password </span>
             </label>
