@@ -1,3 +1,8 @@
+html, body, .parent-container {
+    margin: 0;
+    height: 100%;
+}
+
 .auth {
 	background: rgba(0,0,0, 0.85);
 	overflow: auto;
@@ -131,16 +136,27 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 	background-color: blue;
 }
 
+.auth .parent-container {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
 .auth .container {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	position: relative;
+
 	padding: 30px 25px 15px 25px;
 	max-width: 500px;
 	background-color: black;
 	border: 1px solid grey;
 	border-radius: 15px;
+	margin: auto;
 }
 
 .auth .account-error {
@@ -165,35 +181,27 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 
 @media only screen and (max-width: 500px){
 	.auth {
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-align: center;
-		-webkit-align-items: center;
-		align-items: center;
-
 		background: black;
-		margin-left:auto;
-   	 	margin-right:auto;
-   	 	overflow-x: scroll;
-		overflow-y: scroll;
 	}
 
 	.auth .form-group {
-		margin-left:auto;
-   	 	margin-right:auto;
-		width: 300px;
+		margin-left: auto;
+   	 	margin-right: auto;
+		width: 90%;
 	}
 
 	.auth .container {
 		border: none;
 		background: black;
-		width: 500px;
-		padding-bottom: 75px;
+		width: 100%;
+		overflow: hidden;
+		margin-bottom: 50%;
+		min-width: 350px;
+		margin: auto;
 	}
 
 	.auth .btn-primary {
-		min-width: 300px;
+		min-width: 250px;
 	}
 }
 
@@ -817,8 +825,8 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
   	position: absolute;
   	top: 0;
   	left: 0;
-  	height: 100%;
-  	width: 100%;
+  	height: 100vh;
+  	width: 100vw;
   	z-index: -1;
 }
 
@@ -1193,22 +1201,18 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		max-height: 1000px;
 	}
 
-	.chatroom .no-messages {
-		text-align: left;
-		padding-left: 10px;
-	}
-
 	.chatroom .navbar {
 		min-width: 100%;
 	}
 
 	.chatroom .dropdown-menu {
 		left: 0px;
-		width: 400px;
+		width: 100%;
 	}
 
-	.chatroom .dropdown-item {
+	.chatroom .dropdown {
 		width: 100% !important;
+		margin: 0;
 	}
 
 	.chatroom .nav-item {

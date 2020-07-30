@@ -1,18 +1,6 @@
 $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
-	$(window).load($.debounce(200, function(){
-	   $('input').each(function(){
-	   		if ($('input').val().length) {
-	   			$('input').focus();
-	   			$('input').blur();
-	   		}
-	   });
-
-	   $('.account-error').remove();
-	   $('input').css('border-bottom-color', 'white');
-	}));
-
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
 		
