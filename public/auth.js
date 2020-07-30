@@ -1,14 +1,14 @@
 $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
-	$(window).load($.debounce(200,function(){
+	$(window).load(function(){
 	   $('input').each(function(element){
 	   		if (element.val().length) {
 	   			element.focus();
 	   			element.blur();
 	   		}
 	   });
-	}));
+	});
 
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
