@@ -1,7 +1,9 @@
 <script type="text/javascript">
+
   function scrollToMiddle() {
     $(window).scrollTop($('h1').offset.top);
   }
+
 </script>
 
 
@@ -26,7 +28,7 @@
     <% } %> 
 
       <h1 class="page-header text-center"> Login </h1>  
-        <form method="POST" autocomplete="off" spellcheck="false">
+        <form method="POST" spellcheck="false">
           <div class = "form-group">
             <input type="text" class="form-control" value="<%= enteredUsername ? enteredUsername : '' %>" name="username" id="username" placeholder=" "> 
             <label for="username" class="floating-label">

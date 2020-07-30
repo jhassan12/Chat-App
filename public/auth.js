@@ -1,6 +1,14 @@
 $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
+	$(window).load($.debounce(200,function(){
+	    $('input:-webkit-autofill').each(function(){
+	        if (!$(this).val().length) {
+	            $(this).find('.floating-label-content').css({'font-size': '12px', 'transform': 'translateY(-150%)'});
+	        }
+	    });
+	}));
+
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
 		

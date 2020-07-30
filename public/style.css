@@ -93,7 +93,7 @@
 .auth .form-group input:not(:placeholder-shown) + .floating-label .floating-label-content,
 .auth .form-group input:focus + .floating-label .floating-label-content {
 	font-size: 12px;
-	transform: translateY(-130%);
+	transform: translateY(-150%);
 }
 
 _::-webkit-full-page-media, _:future, :root .auth .form-group input:not(:placeholder-shown) + .floating-label .floating-label-content,
