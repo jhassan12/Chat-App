@@ -805,6 +805,8 @@ function loadSearchMessages(messages) {
 				changeRoom.call(recentMessage, $(recentMessage).data('conversationid'), {searchMessageID: messageID, messagesLoaded: numberOfMessagesLoaded});
 			}
 
+			$('#search').blur();
+
 			if (!$('.navbar-toggler').hasClass('collapsed')) {
 				cancelSearch();
 				$('.navbar-toggler').click();
@@ -837,8 +839,12 @@ function createSearchUser(username) {
 		requestPrivateChat(username);
 		$('#search').blur();
 
-		cancelSearch();
-		$('.navbar-toggler').click();
+
+		if ($('.navbar-toggler').is(':visible')) {
+			cancelSearch();
+			$('.navbar-toggler').click();
+		}
+
 	});
 
 	$(container).hover(hoverDropdown);
@@ -1273,6 +1279,7 @@ function setPlaceholderText(text) {
 	$('.room-name').html(words[words.length - 1]);
 
 	updateTitle();
+	resize();
 }
 
 function clearInput() {

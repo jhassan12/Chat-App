@@ -90,6 +90,12 @@
 	text-decoration: none !important;
 }
 
+
+.auth .form-group input:-webkit-autofill:hover + .floating-label .floating-label-content {
+	font-size: 12px;
+	transform: translateY(-150%);
+}
+
 .auth .form-group input:not(:placeholder-shown) + .floating-label .floating-label-content,
 .auth .form-group input:focus + .floating-label .floating-label-content {
 	font-size: 12px;
@@ -100,6 +106,16 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:not(:placeho
 _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .floating-label .floating-label-content {
   font-size: 15px;
   transform: translateY(-100%);
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  border-bottom: 1px solid #ffffa1 !important;
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .auth .floating-label-content {
