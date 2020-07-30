@@ -1207,10 +1207,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
 		width: 400px;
 	}
 
-	.chatroom .dropdown-item {
-		width: 100%;
-	}
-
 	.chatroom .nav-item {
 		padding-top: 10px;
 		padding-bottom: 10px;
