@@ -893,6 +893,10 @@ input:-webkit-autofill:focus {
 	-webkit-backface-visibility: hidden;
 }
 
+.chatroom .message a {
+	color: #add8e6;
+}
+
 .chatroom .self .message {
 	float: left;
 	margin-left: 5px;

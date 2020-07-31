@@ -909,6 +909,8 @@ function createMessage(username, msg, id, date, pending) {
 	$(contentContainer).append(messageContent);
 	$(message).append(contentContainer);
 
+	$(messageContent).html($(messageContent).html().replace(/((http:|https:)[^\s]+[\w])/g, '<a href="$1" target="_blank">$1</a>'));
+
 	dateContainer.className = 'date-container';
 	dateContent.className = 'date';
 	$(dateContainer).append(dateContent);
