@@ -906,10 +906,12 @@ function createMessage(username, msg, id, date, pending) {
 
 	messageContent.className = "message-content";
 	messageContent.innerText = msg;
+
+	$(messageContent).html($(messageContent).html().replace(/(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim, '<a href="$1" target="_blank">$1</a>'));
+	$(messageContent).html($(messageContent).html().replace(/(^|[^\/])(www\.[\S]+(\b|$))/gim, '$1<a href="http://$2" target="_blank">$2</a>'));
+
 	$(contentContainer).append(messageContent);
 	$(message).append(contentContainer);
-
-	$(messageContent).html($(messageContent).html().replace(/((http:|https:)[^\s]+[\w])/g, '<a href="$1" target="_blank">$1</a>'));
 
 	dateContainer.className = 'date-container';
 	dateContent.className = 'date';
@@ -1054,6 +1056,8 @@ function updateMessage(username, msg, id, temporaryID, date) {
 
 		pendingMessage.find('.user').html(username);
 		pendingMessage.find('.message-content').html(msg);
+		pendingMessage.find('.message-content').html(pendingMessage.find('.message-content').html().replace(/(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim, '<a href="$1" target="_blank">$1</a>'));
+		pendingMessage.find('.message-content').html(pendingMessage.find('.message-content').html().replace(/(^|[^\/])(www\.[\S]+(\b|$))/gim, '$1<a href="http://$2" target="_blank">$2</a>'));
 		pendingMessage.attr('id', id);
 		pendingMessage.find('.date').html(date);
 
