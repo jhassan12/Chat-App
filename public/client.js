@@ -1422,6 +1422,7 @@ function resetRoom() {
 	clearAllMessages();
 	clearInput();
 
+	$('.scroll-bottom').hide();
 	$('.redirect-container').hide();
 	
 }
