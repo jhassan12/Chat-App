@@ -77,7 +77,7 @@ $(document).ready(function() {
 	$('.scroll-bottom .fa').on('click touchend', function(){
 		scrollBottomAnimation = true;
 
-		$('.scroll-bottom').fadeOut(500);
+		$('.scroll-bottom').stop().fadeOut();
 
 		$(chatContainer).animate({ scrollTop: chatContainer.scrollHeight}, 800, function() {
 			scrollBottomAnimation = false;
@@ -123,10 +123,12 @@ $(document).ready(function() {
 			loadMoreMessages();
 		}
 
-		if (chatContainer.scrollHeight - chatContainer.scrollTop > 2500 && !scrollBottomAnimation) {
-			$('.scroll-bottom').fadeIn(500);
-		} else if (chatContainer.scrollHeight - chatContainer.scrollTop <= 2500) {
-			$('.scroll-bottom').fadeOut(500);
+		if (!scrollBottomAnimation) {
+			if (chatContainer.scrollHeight - chatContainer.scrollTop > 2500) {
+				$('.scroll-bottom').stop().fadeIn();
+			} else if (chatContainer.scrollHeight - chatContainer.scrollTop <= 2500) {
+				$('.scroll-bottom').stop().fadeOut();
+			}
 		}
 
 		if (!isScrollBottom(this)) {
