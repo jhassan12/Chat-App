@@ -85,8 +85,8 @@ $(document).ready(function() {
 		});
 	});
 
-	$('.nav-container').on('click touchend', function(){
-		$('.dropdown-item').removeClass('selected');
+	$('.dropdown-item').on('click touchend', function(){
+		$(this).removeClass('selected');
 	});
 	
 	$('#user-input').on('input', resize);
@@ -180,7 +180,6 @@ $(document).ready(function() {
 			$('.search-wrapper').show();
 		} else if (e.type === 'blur') {
 			$('.search-wrapper').hide();
-			$('.selected').removeClass('selected');
 
 			if (!$(this).val().length && !$('.search-tag').is(':visible')) {
 				$(this).attr('placeholder', 'Search');
