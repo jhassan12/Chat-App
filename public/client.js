@@ -39,7 +39,7 @@ $(document).ready(function() {
 		deleteSearchTag();
 	});
 
-	$(document).on('click touchend', '.redirect-container', function(){
+	$(document).on('click touchend', '.redirect-icon', function(){
 		$('.redirect-icon').tooltip('hide');
 		$('.redirect-container').hide();
 		requestCommunity();
