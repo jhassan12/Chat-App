@@ -1041,6 +1041,12 @@ function handleConnections(_io) {
 				return;
 			}
 
+			const messageObj = await getMessage(messageID);
+
+			if (!messageObj || messageObj.senderName !== username) {
+				return;
+			}
+
 			removeMessage(username, messageID, conversationID);
 
 			io.sockets.in(conversationID).emit('delete-message', messageID);
@@ -1180,7 +1186,7 @@ function handleConnections(_io) {
 
 			validConversation = await validateConversation(username, newConversationID);
 
-			if (!newConversationID) {
+			if (!validConversation) {
 				return;
 			}
 

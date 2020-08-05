@@ -906,7 +906,7 @@ function createMessage(username, msg, id, date, pending) {
 	$(contentContainer).append(userContainer);
 
 	messageContent.className = "message-content";
-	messageContent.innerText = msg;
+	messageContent.innerHTML = msg;
 
 	$(messageContent).html($(messageContent).html().replace(/(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim, '<a href="$1" target="_blank">$1</a>'));
 	$(messageContent).html($(messageContent).html().replace(/(^|[^\/])(www\.[\S]+(\b|$))/gim, '$1<a href="http://$2" target="_blank">$2</a>'));
@@ -1007,8 +1007,8 @@ function sendMessage() {
 	}
 
 	const conversationID = getConversationID();
-	const message = inputField.value;
 	const temporaryID = getPendingID();
+	const message = sanitize(inputField.value);
 
 	socket.emit('input-received', 
 	{
@@ -1487,6 +1487,24 @@ function smoothScroll(e) {
 
     this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
     e.preventDefault();
+}
+
+function sanitize(string) {
+  const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+      "`": '&grave;'
+  };
+
+  const reg = /[&<>"'/`]/ig;
+
+  return string.replace(reg, function(match) {
+  	return map[match]; 
+  });
 }
 
 function adjustOnlineUsersContainerHeight() {
