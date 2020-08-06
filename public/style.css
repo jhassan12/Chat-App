@@ -487,6 +487,11 @@ input:-webkit-autofill:focus {
 	margin-top: 10px;
 }
 
+.chatroom .dropdown {
+	width: 40px;
+	margin-right: 20px;
+}
+
 .chatroom .dropdown-menu {
 	position: relative;
 	background-color: #111112;
@@ -634,15 +639,14 @@ input:-webkit-autofill:focus {
 
 .chatroom .nav-container {
 	position: relative;
-	width: 38px;
+	width: 40px;
 	height: 38px;
-	margin-right: 20px;
 	cursor: pointer;
 }
 
 .chatroom .m-icons-wrapper {
 	padding-top: 3px;
-	width: 100%;
+	width: 40px;
 }
 
 .chatroom .no-messages {
