@@ -108,7 +108,6 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
   transform: translateY(-100%);
 }
 
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
@@ -224,6 +223,7 @@ input:-webkit-autofill:focus {
 	background-color: rgba(0,0,0, 0.85);
 	font-family: Arial, Helvetica;
 	-webkit-overflow-scrolling: touch;
+	min-width: 375px;
 }
 
 .chatroom:after {
@@ -326,13 +326,13 @@ input:-webkit-autofill:focus {
 .chatroom .search-minimize {
 	text-align: center;
 	display: none;
-	cursor: pointer;
 	margin-bottom: 13px;
 }
 
 .chatroom .search-minimize .fa-search {
 	transform: scale(1.5); 
 	transition: color .2s linear;
+	cursor: pointer;
 }
 
 .chatroom .fa-search {
@@ -421,10 +421,6 @@ input:-webkit-autofill:focus {
 	padding: 10px;
 	line-height: 15px;
 	height: 45px !important;
-}
-
-.chatroom .dropdown {
-	cursor: pointer;
 }
 
 .chatroom .ellipses {
@@ -630,15 +626,18 @@ input:-webkit-autofill:focus {
 .chatroom .fa-envelope-o {
 	display: block;
 	color: white;
-	cursor: pointer;
 	padding-bottom: 2px;
 	padding-left: 4px;
 	transition: background .2s linear;
+	width: 36px;
 }
 
 .chatroom .nav-container {
 	position: relative;
-	width: 60px;
+	width: 38px;
+	height: 38px;
+	margin-right: 20px;
+	cursor: pointer;
 }
 
 .chatroom .m-icons-wrapper {
@@ -1062,8 +1061,6 @@ input:-webkit-autofill:focus {
   animation-delay: -0.8s;
 }
 
-
-
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
   20% { -webkit-transform: scaleY(1.0) }
@@ -1211,11 +1208,19 @@ input:-webkit-autofill:focus {
 }
 
 
+@media only screen and (max-width: 375px) {
+	.chatroom,
+	html  {
+		overflow: auto !important;
+	}
+}
+
 @media only screen and (max-width: 575px) {
 	.chatroom .container {
 		margin-top: 80px;
 		margin-bottom: 20px;
-		min-width: 100%;
+		width: 100%;
+		min-width: 375px;
 		height: 99vh;
 		max-height: 1000px;
 	}
@@ -1237,12 +1242,16 @@ input:-webkit-autofill:focus {
 	.chatroom .nav-item {
 		padding-top: 10px;
 		padding-bottom: 10px;
-		width: 40px;
 		margin-right: auto;
+	}
+
+	.chatroom .fa-envelope-o {
+		width: 32px;
 	}
 
 	.chatroom .search-minimize {
 		display: inline-block;
+		width: 40px;
 	}
 
 	.chatroom .search-container {

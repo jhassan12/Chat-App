@@ -145,9 +145,11 @@ $(document).ready(function() {
 		if (!$(this).hasClass('collapsed')) {
 			$('.navbar').css({'min-height':  ''});
 		}
+
+		$('.dropdown-menu').hide();
 	});
 
-	$('.search-minimize').on('click touchend', searchMinimized);
+	$('.search-minimize .fa-search').on('click touchend', searchMinimized);
 
 	$('.search-option').on('click touchend', function(){
 		if ($(this).hasClass('so1')) {
@@ -733,7 +735,7 @@ function createRecentMessage(conversationID, title, content, date, unseen) {
 	$(recentMessageContainer).on('click', function() {
 		changeRoom.call(recentMessageContainer, recentMessageContainer.id)
 
-		if (!$('.navbar-toggler').hasClass('collapsed')) {
+		if (!$('.navbar-toggler').hasClass('collapsed') && $('.navbar-toggler').is(':visible')) {
 			$('.navbar-toggler').click();
 		}
 	});
@@ -808,7 +810,7 @@ function loadSearchMessages(messages) {
 
 			$('#search').blur();
 
-			if (!$('.navbar-toggler').hasClass('collapsed')) {
+			if (!$('.navbar-toggler').hasClass('collapsed') && ($('.navbar-toggler').is(':visible') || $('.cancel-search').is(':visible'))) {
 				cancelSearch();
 				$('.navbar-toggler').click();
 			}
@@ -840,12 +842,10 @@ function createSearchUser(username) {
 		requestPrivateChat(username);
 		$('#search').blur();
 
-
-		if ($('.navbar-toggler').is(':visible')) {
+		if (!$('.navbar-toggler').hasClass('collapsed') && ($('.navbar-toggler').is(':visible') || $('.cancel-search').is(':visible'))) {
 			cancelSearch();
 			$('.navbar-toggler').click();
 		}
-
 	});
 
 	$(container).hover(hoverDropdown);
