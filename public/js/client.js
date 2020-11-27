@@ -127,8 +127,9 @@ $(document).ready(function() {
 		var data = e.clipboardData.getData('text/html') ||
 		e.clipboardData.getData('text/plain');
 
-		var regex = /<(?!(\/\s*)?(img|b|i|strong|s|u)[>,\s])([^>])*>/g;
+		var regex = /<(?!(\/\s*)?(img width=\"20px\" height=\"20px\" src=\"[A-Za-z:\.\-\/0-9]+\/img\/[A-Za-z0-9]+\.png\")[>,\s])([^>])*>/g;
 		data = data.replace(regex, '');
+		data = data.replace(/\r?\n|\r/g, '')
 
 		data = data.replace(/(src=\")([A-Za-z:\.\-\/0-9]+)(\/img\/[A-Za-z0-9]+\.png\")/g, "$1$3")
 	  
@@ -219,7 +220,6 @@ $(document).ready(function() {
 		} else if (idleScrollState) {
 			idleScrollState = false;
 		}
-
 	});
 
 	$('#send-message').on('click', sendMessage);
