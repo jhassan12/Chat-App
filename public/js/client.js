@@ -128,7 +128,7 @@ $(document).ready(function() {
 		var regex = /<(?!(\/\s*)?(img|b|i|strong|s|u)[>,\s])([^>])*>/g;
 		data = data.replace(regex, '');
 
-		data = data.replace(/(src=\")([A-Za-z:\/0-9]+)(\/img\/[A-Za-z0-9]+\.png\")/g, "$1$3")
+		data = data.replace(/(src=\")([A-Za-z:\.\-\/0-9]+)(\/img\/[A-Za-z0-9]+\.png\")/g, "$1$3")
 	  
 		// Insert the filtered content
 		document.execCommand('insertHTML', false, data);
