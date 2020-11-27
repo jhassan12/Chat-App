@@ -784,6 +784,7 @@ input:-webkit-autofill:focus {
 	border-radius: 50%;
 	background-color: var(--unseen-messages-icon2-bg-color);
 	color: var(--unseen-messages-icon2-text-color);
+	z-index: 7;
 }
 
 .chatroom .inner {
