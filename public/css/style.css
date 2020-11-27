@@ -954,7 +954,7 @@ input:-webkit-autofill:focus {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 80%;
-    min-height: 34px;
+    min-height: 36px;
     overscroll-behavior: contain;
     background-color: var(--main-input-bg-color);
 
@@ -1210,6 +1210,7 @@ input:-webkit-autofill:focus {
 .chatroom .message-content-container {
 	max-height: 300px;
 	overflow: scroll;
+	margin-bottom: 5px;
 
 	scrollbar-width: none;
 	-ms-overflow-style: none;
