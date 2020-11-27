@@ -1,6 +1,16 @@
 $(document).ready(function() {
 	document.addEventListener('touchstart', function(){}, {passive: true});
 
+	document.body.addEventListener('mousedown', function() {
+	  document.body.classList.add('using-mouse');
+	});
+
+	document.body.addEventListener('keydown', function(event) {
+	  if (event.keyCode === 9) {
+	   	document.body.classList.remove('using-mouse');
+	  }
+	});
+
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
 		

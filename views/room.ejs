@@ -23,10 +23,10 @@
 	}
 </style>
 
-<body class="chatroom">
+<body class="chatroom no-select theme-dark">
 	<nav class="navbar navbar-expand-sm navbar-default">
 		<a class="navbar-brand ellipses" href="/room" id="username"><%=username%></a>
-
+			
 		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="icon-bar top-bar"></span>
 			<span class="icon-bar middle-bar"></span>
@@ -42,7 +42,6 @@
 				<li class="nav-item search-container">
 					<div class="d-flex align-items-center" id="search-bar">
 
-
 						<div class="searchbox-container">
 							<span class="search-tag no-select st1">users:</span>
 							<span class="search-tag no-select st2">messages:</span>
@@ -53,8 +52,6 @@
 							<i class="fa fa-search" aria-hidden="true"></i>			
 						</div>
 
-
-				
 				
 						<div class="search-wrapper">
 							<div class="search-dropdown d-menu">
@@ -71,10 +68,16 @@
 					
 				</li>
 
+				<li class="nav-item">
+					<div class="theme-change">
+						<i class="fa fa-lightbulb-o fa-2x" aria-hidden="true" data-toggle="tooltip" title="Toggle theme" tabindex="0"></i>
+					</div>
+				</li>
+
 				<li class="nav-item dropdown" id="dropdown">
 							<div class="nav-container" id="navbarDropdown" role="menu" data-toggle="dropdown">
 								<div class="m-icons-wrapper">
-									<i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+									<i class="fa fa-envelope-o fa-2x" aria-hidden="true" tabindex="0"></i>
 								</div>
 							</div>	
 						
@@ -94,7 +97,6 @@
 			<div class = "container">
 				<div class = "chat-container">
 
-
 					<div class="overlay d-flex justify-content-center align-items-center">	
 						<div class="spinner-border" role="status">
 		 					<span class="sr-only">Loading...</span>
@@ -102,31 +104,62 @@
 					</div>
 						
 					<div class = "online-users">
-						<h6>Online</h6>		
+						<div class="online-users-header">Online</div>		
 						<div class = "users"> </div>
 						<div class="redirect-container">
 							<div class="redirect-icon-container">
-							   <div class="redirect-icon" data-toggle="tooltip"  title="Back to Community Chat"></div>
+							   <i class=" redirect-icon fa fa-sign-out fa-2x" aria-hidden="true"></i>
 							</div>
 						</div>
 					</div>
 
+					<div class="room-name ellipses"></div>
+					<div class="chat" id="chat-messages"></div>	
 					
-					<h6 class="room-name ellipses"></h6>
 
-					<div class="chat" id="chat-messages"></div>		
-							
 
 					<div class = "input-fields-container">
+						<div class="emotion">
+							<div class="emotion-area"></div>
+						</div>	
+
+						
+
 						<div class = "input-fields-wrapper">
+
 
 							<div class="scroll-bottom">
 								<i class="fa fa-arrow-circle-o-down fa-3x" aria-hidden="true"></i>
 							</div>
 
-							<textarea type="text" id="user-input" maxlength="200"></textarea>
+							<div class="placeholder-text ellipses"></div>
+
+
+							<div class="mark-up">
+
+								<span class="emotion-Icon">
+							   		<i class="fa fa-smile-o" aria-hidden="true"></i>
+								</span>
+
+								<div class="text-selection">
+
+										
+									<div class="text-area">
+	
+										<span class="mkd select-text" contenteditable="true" id="user-input" placeholder="" ondragenter="event.preventDefault(); event.dataTransfer.dropEffect = 'none'" ondragover="event.preventDefault(); event.dataTransfer.dropEffect = 'none'"></span>	
+
+										</div>
+									</div>
+								</div>	
+							</div>
+
+	
 							<div class="button-container">
-								<div class = "button-wrapper">
+								<div class="character-limit">
+									<span class="limit-text ellipses">1000</span>
+								</div>
+								
+								<div class ="button-wrapper">
 									<span id="send-message" data-toggle="tooltip" title="Send message"></span>
 								</div>
 							</div>
@@ -137,7 +170,9 @@
 		</div>
 	</div>
 
-
 	<script type = "text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type = "text/javascript" src="/client.js"> </script>
+	<script src="/js/plugins.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/jitbit/HtmlSanitizer@master/HtmlSanitizer.js"></script>
+	<script type = "text/javascript" src="/client.js"></script>
+
 </body>
