@@ -33,6 +33,8 @@ var scrollDisabled = false;
 var activeElement = document;
 
 $(document).ready(function() {
+	assignTheme();
+
 	defaultInputSize = $('.mark-up').outerHeight();
 
 	var windowWidth = $(window).width();
@@ -1581,6 +1583,10 @@ function clearAllMessages() {
 	numberOfMessagesLoaded = 0;
 }
 
+function createCookie(name, value) {
+	document.cookie = `${name}=${value}; expires=Thu, 18 Dec 2069 12:00:00 UTC`;
+}
+
 function deleteCookie(name, path) {
 	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path};`;
 }
@@ -1767,13 +1773,28 @@ function debounce(func, wait, immediate) {
 	};
 }
 
+function assignTheme() {
+	var theme = getCookie('theme');
+
+	$('body').removeClass('theme-dark');
+	$('body').removeClass('theme-light');
+
+	if (theme) {
+		$('body').addClass(theme === '1' ? 'theme-light' : 'theme-dark')
+	} else {
+		$('body').addClass('theme-dark')
+	}
+}
+
 function toggleTheme() {
 	if ($('body').hasClass('theme-dark')) {
 		$('body').removeClass('theme-dark');
 		$('body').addClass('theme-light');
+		createCookie("theme", 1)
 	} else {
 		$('body').removeClass('theme-light');
 		$('body').addClass('theme-dark');
+		createCookie("theme", 0)
 	}
 }
 
