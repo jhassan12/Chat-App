@@ -210,7 +210,7 @@ $(document).ready(function() {
 		if (!scrollBottomAnimation) {
 			if (chatContainer.scrollHeight - chatContainer.scrollTop > 2500) {
 				$('.scroll-bottom').stop().fadeIn();
-			} else if (chatContainer.scrollHeight - chatContainer.scrollTop <= 2500) {
+			} else {
 				$('.scroll-bottom').stop().fadeOut();
 			}
 		}
@@ -406,7 +406,6 @@ function deleteSearchTag() {
 	$('#search').val(value.replace(/^\s+|\s+$/g,""));
 	$('#search').css({'padding-left': '8px'});
 	$('#search').trigger('input');
-	$('#search').trigger('focus');
 }
 
 
