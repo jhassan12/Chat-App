@@ -11,6 +11,7 @@ $(document).ready(function() {
 	  }
 	});
 
+
 	$('input').on('focusout', function(){
 		const name = $(this).attr('name');
 		
@@ -24,10 +25,15 @@ $(document).ready(function() {
 		const name = $(this).attr('name');
 		const errorSelector = "div[data-type-error='" + name + "']"; 
 
+		const text = $(this).val();
+
+		if (!text.length) {
+			createErrorMessage(name, 'This field is required');
+			return;
+		}
+
 		if (!isLogin()) {
 			/* Sign up */ 
-			const text = $(this).val();
-
 			switch (name) {
 			case 'username':
 				if (text.length < 3 || text.length > 50) {
@@ -47,14 +53,19 @@ $(document).ready(function() {
 					return;
 				}
 
-				if (text === $('#cpassword').val()) {
+				var cpass = $('#cpassword').val();
+
+				if (text === cpass) {
 					var errorDiv = $("div[data-type-error='cpassword']");
 
 					if (errorDiv.exists() && errorDiv.text() === 'Passwords do not match') {
 						errorDiv.remove();
 						$('#cpassword').css('border-bottom-color', 'white');
 					}
+				} else if (cpass.length) {
+					createErrorMessage('cpassword', 'Passwords do not match');
 				}
+
 				break;
 
 			case 'cpassword':
@@ -101,24 +112,22 @@ function checkForEmptyFields(e) {
 	}
 
 	if (!$('#password').val().length) {
-		createErrorMessage('password', errorMessage);
+		error = true;
+	}
+
+	if (!isLogin() && !$('#cpassword').val().length) {
 		error = true;
 	}
 
 	if (error) {
-		$('#password').val('');
+		$('#password').val('').trigger('input');
+
+		if (!isLogin()) {
+			$('#cpassword').val('').trigger('input');
+		}
+
 		e.preventDefault();
 	} 
-
-	if (!isLogin()) {
-		if (!$('#cpassword').val().length) {
-			error = true;
-			createErrorMessage('cpassword', errorMessage);
-			e.preventDefault();
-		} else if (error) {
-			$('#cpassword').val('');
-		}
-	}
 }
 
 function setCookie(key, value, path) {
@@ -159,6 +168,7 @@ function createErrorMessage(type, content) {
 	$(errorContainer).text(content);
 
 	$(errorContainer).insertAfter($(labelSelector));
+
 	$('#' + type).css('border-bottom-color', 'red');
 }
 

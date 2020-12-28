@@ -141,10 +141,14 @@ $(document).ready(function() {
 	});
 
 	$('.dropdown').on('show.bs.dropdown', function() {
+		if ($('.overlay').exists()) return;
+
     	$(this).find('.dropdown-menu').first().stop(true, true).slideDown();
   	});
 
 	 $('.dropdown').on('hide.bs.dropdown', function() {
+	 	if ($('.overlay').exists()) return;
+
     	$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
   	});
 
@@ -649,8 +653,9 @@ socket.on('prepare-room-change', function({conversationID, redirect}){
 	}
 });
 
+
 socket.on('query-results', function({users, results, addLoadAnimation}){
-	if (!$('#search').val().length && $('.search-tag:visible').exists()) {
+	if (!$('#search').val().length || !$('#search').val().length && $('.search-tag:visible').exists()) {
 		return;
 	}
 	

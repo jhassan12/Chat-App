@@ -268,11 +268,11 @@ _::-webkit-full-page-media, _:future, :root .auth .form-group input:focus + .flo
   transform: translateY(-100%);
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill, 
 input:-webkit-autofill:focus {
-  border-bottom: 1px solid #ffffa1 !important;
-  -webkit-text-fill-color: white !important;
+  caret-color: white;
+  border-bottom: 1px solid #ffffa1;
+  -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px #000 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -433,7 +433,7 @@ input:-webkit-autofill:focus {
 	height: calc(100% + 1px);
 	background-color: var(--overlay-color);
 	opacity: 0.6;
-	z-index: 3;
+	z-index: 50;
 }
 
 .chatroom .spinner-border {
@@ -443,6 +443,7 @@ input:-webkit-autofill:focus {
 .chatroom .navbar {
 	background-color: var(--navbar-bg-color);
 	width: 100vw;
+	z-index: 10;
 }
 
 .chatroom .searchbox-container {
@@ -551,7 +552,7 @@ input:-webkit-autofill:focus {
 }
 
 .chatroom .d-menu  {
-	z-index: 10000;
+	z-index: 100;
 
 	scrollbar-width: none;
 	-ms-overflow-style: none;
@@ -867,6 +868,7 @@ input:-webkit-autofill:focus {
 .chatroom .input-fields-wrapper {
 	position: relative;
 	width: 100%;
+	z-index: 5;
 }
 
 .chatroom .character-limit {
@@ -896,6 +898,7 @@ input:-webkit-autofill:focus {
 	height: 100%;
 	border: none;
 	border-left: 1px solid var(--button-container-border-left-color);
+	z-index: 10;
 }
 
 .chatroom .button-wrapper {
@@ -910,7 +913,6 @@ input:-webkit-autofill:focus {
 	bottom: 0;
 	width: 100%;
 	height: 32px;
-	z-index: 1
 }
 
 .chatroom #send-message {
@@ -924,7 +926,6 @@ input:-webkit-autofill:focus {
 	cursor: pointer;
 	width: 30px;
 	height: 100%;
-	transition: background .2s linear;
 }
 
 .chatroom .mkd {
@@ -1104,12 +1105,13 @@ input:-webkit-autofill:focus {
   	left: 0;
   	height: 100vh;
   	width: 100vw;
-  	z-index: -1;
+  	z-index: 6;
 }
 
 .chatroom .middle-wrapper {
 	display: table-cell;
   	vertical-align: middle;
+  	z-index: 5;
 }
 
 .chatroom .container {
@@ -1345,7 +1347,8 @@ input:-webkit-autofill:focus {
   }
 }
 
-.chatroom .selected:active {
+.chatroom .selected:active,
+.chatroom .dropdown-item:active {
 	background-color: var(--dropdown-item-hover-bg-color);
 }
 
@@ -1577,4 +1580,13 @@ input:-webkit-autofill:focus {
 		padding-right: 5px;
 	}
 }
+
+@supports not (-webkit-touch-callout: none) {
+	.chatroom #send-message {
+		transition: background .2s linear;
+	}
+}
+
+
+
 
