@@ -1387,14 +1387,6 @@ input:-webkit-autofill:focus {
 	opacity: 0.7;
 }
 
-.chatroom #send-message:active {
-	background: var(--send-icon);
-	background-repeat: no-repeat;
-	background-size: 30px;
-	background-position: 50%, 50%;
-	opacity: 0.7;
-}
-
 .chatroom .scroll-bottom .fa:active {
 	color: var(--scroll-bottom-hover-color);
 	opacity: 0.7;
@@ -1584,6 +1576,23 @@ input:-webkit-autofill:focus {
 @supports not (-webkit-touch-callout: none) {
 	.chatroom #send-message {
 		transition: background .2s linear;
+	}
+
+	.chatroom #send-message:active {
+		background: var(--send-icon);
+		background-repeat: no-repeat;
+		background-size: 30px;
+		background-position: 50%, 50%;
+		opacity: 0.7;
+	}
+
+	@media (hover: hover) {
+		.chatroom #send-message:hover {
+			background: var(--send-icon);
+			background-repeat: no-repeat;
+			background-size: 30px;
+			background-position: 50%, 50%;
+		}
 	}
 }
 
