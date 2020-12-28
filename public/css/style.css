@@ -1571,6 +1571,13 @@ input:-webkit-autofill:focus {
 	.emotion-Icon {
 		padding-right: 5px;
 	}
+
+	.chatroom #send-message {
+		background: var(--send-icon);
+		background-repeat: no-repeat;
+		background-size: 30px;
+		background-position: 50%, 50%;
+	}
 }
 
 @supports not (-webkit-touch-callout: none) {
