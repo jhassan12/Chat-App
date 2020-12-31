@@ -569,8 +569,11 @@ socket.on('load-messages', function({messages, addLoadAnimation, search}){
 		prependMessages(messages, addLoadAnimation);
 	}
 
+	if ($('.loading').exists()) {
+		$('.loading').removeClass('loading');
+	}
+
 	initialChatLoad();
-	
 
 	if (search) {
 		scrollToMessage(search.searchMessageID);
@@ -600,7 +603,7 @@ socket.on('load-recent-messages', function({messages, addLoadAnimation}){
 	}
 
 	if (numberOfRecentMessagesLoaded) {
-		$('.dropdown-menu .dropdown-item').last().css({'border-bottom': '1px solid rgba(255, 255, 255, 0.3)'});
+		$('.dropdown-menu .dropdown-item').last().css({'border-bottom': '1px solid #606060'});
 	}
 
 	loadRecentMessages(messages);
@@ -664,7 +667,7 @@ socket.on('query-results', function({users, results, addLoadAnimation}){
 	if (!numberOfSearchResultsLoaded) {
 		$('.search-dropdown .dropdown-item').remove();
 	} else {
-		$('.search-dropdown .dropdown-item').last().css({'border-bottom': '1px solid rgba(255, 255, 255, 0.3)'});
+		$('.search-dropdown .dropdown-item').last().css({'border-bottom': '1px solid #606060'});
 	}
 
 	if (results.length) {
