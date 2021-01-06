@@ -1549,6 +1549,10 @@ function changeURL(conversationID) {
 function changeRoom(conversationID, search) {
 	const current = getConversationID();
 
+	if ($('.dropdown').hasClass('show')) {
+		$('.nav-container').click();
+	}
+
 	socket.emit('change-room', {oldConversationID: current, newConversationID: conversationID, search: search});	
 
 	if ($(this).hasClass('search-message')) {
