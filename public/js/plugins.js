@@ -54,6 +54,19 @@ $(document).ready(function(){
 //	$(document).one('click' , '.emotion-Icon', function(e){
 //		ApndImgEmotion();
 //	});
+
+	$(document).on('click', function(e){
+		var emotionArea = $('.emotion-area');
+		
+		if (!$('.emotion-Icon').find($(e.target)).length && !$('.emotion').find($(e.target)).length && emotionArea.hasClass('ShowImotion')) {
+			if ($(document.activeElement).hasClass('select-text') && getSelectionHtml().length) return;
+
+			emotionArea.removeClass('ShowImotion');
+			$('.emotion-area').empty();
+			emotionArea.removeClass('top');
+			$('.emotion').hide()
+		}
+	});
 	
 	$(document).on('click' , '.emotion-Icon', function(e){
 		var top = $(this).offset().top ,
@@ -62,7 +75,7 @@ $(document).ready(function(){
 		
 		emotionArea.toggleClass('ShowImotion');
 
-		
+
 		if( top <= 160 ){
 			emotionArea.toggleClass('top');
 		}
@@ -76,7 +89,6 @@ $(document).ready(function(){
 			$('.emotion').show()
 		}
 	});
-
 
 
 	function getCharacterOffsetWithin_final(range, node) {
@@ -155,12 +167,34 @@ $(document).ready(function(){
 	    }
 	}
 
- function pasteHtmlAtCaret(html) { 
+
+	function getSelectionHtml() {
+	    var html = "";
+	    if (typeof window.getSelection != "undefined") {
+	        var sel = window.getSelection();
+	        if (sel.rangeCount) {
+	            var container = document.createElement("div");
+	            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+	                container.appendChild(sel.getRangeAt(i).cloneContents());
+	            }
+	            html = container.innerHTML;
+	        }
+	    } else if (typeof document.selection != "undefined") {
+	        if (document.selection.type == "Text") {
+	            html = document.selection.createRange().htmlText;
+	        }
+	    }
+	    return html;
+	}
+
+
+ 	function pasteHtmlAtCaret(html) { 
  		restoreSelection(prevSelection);
  		prevSelection = null;
  		
         let sel, range;
         if (window.getSelection) {
+
           // IE9 and non-IE
           sel = window.getSelection();
           if (sel.getRangeAt && sel.rangeCount) {
