@@ -81,7 +81,7 @@ function setLoginCookie(req, res, next) {
 }
 
 router.get('/', (req, res) => {
-	res.redirect('/login');
+	res.render('landing');
 });
 
 router.get('/login', forwardAuthenticated, (req, res) => {

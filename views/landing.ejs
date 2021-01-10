@@ -1,0 +1,37 @@
+<script type="text/javascript">
+	document.title = "QuickChats"
+</script>
+
+<body class="chatroom" style="background-color: #181818;">
+	<h1 style="width:100%;text-align: center; color:white"> QuickChats </h1>
+
+	<div class="message-container other landing"><div class="message"><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text">Welcome to QuickChats!</span></div><div class="date-container"><small class="date select-text">4:45pm</small></div></div></div>
+
+	<div class="message-container self landing"><div class="message"><div class="delete-header"><button class="delete-button">Delete</button></div><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text">Thanks. Can you tell me a little bit about it?</span></div><div class="date-container"><small class="date select-text">4:45pm</small></div></div></div>
+
+	<div class="message-container other landing"><div class="message"><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text">I am glad you asked! As the name suggests, QuickChats is a chat app that offers a fast and smooth user experience.</span></div><div class="date-container"><small class="date select-text">4:46pm</small></div></div></div>
+
+	<div class="message-container self landing"><div class="message"><div class="delete-header"><button class="delete-button">Delete</button></div><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text">Oh, I am so excited! Where do I sign up?!</span></div><div class="date-container"><small class="date select-text">4:47pm</small></div></div></div>
+
+	<div class="message-container other landing"><div class="message"><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text"><a href="/signup">Sign up</a></span></div><div class="date-container"><small class="date select-text">4:47pm</small></div></div></div>
+
+	<div class="message-container self landing"><div class="message"><div class="delete-header"><button class="delete-button">Delete</button></div><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text">What if I already have an account?</span></div><div class="date-container"><small class="date select-text">4:48pm</small></div></div></div>
+
+	<div class="message-container other landing"><div class="message"><span class="user ellipses select-text">ausi</span><div class="message-content-container"><span class="message-content select-text">Then you simply just <a href="/login">login</a></span></div><div class="date-container"><small class="date select-text">4:48pm</small></div></div></div>
+</body>
+
+<script type="text/javascript">
+	document.body.addEventListener('mousedown', function() {
+	  document.body.classList.add('using-mouse');
+	});
+
+	document.body.addEventListener('keydown', function(event) {
+	  if (event.keyCode === 9) {
+	   	document.body.classList.remove('using-mouse');
+	  }
+	});
+
+	$('.self .delete-button').click(function(e){
+		$(this).closest('.message-container').fadeOut(300);
+	});
+</script>

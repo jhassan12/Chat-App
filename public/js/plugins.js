@@ -3,12 +3,6 @@ $(document).ready(function(){
 	var prevCaretPos = 0;
 	var prevSelection = null;
     
-//	var alphabet = "abcdef".split("");
-//	alphabet.each(function(letter) {
-////	  $('.emotion-area').append('<img scr="img/1f60${letter}.png"');
-//		console.log(letter);
-//	});
-	
 	function ApndImgEmotion() {
 		for (var i = 65; i <= 70; i++) {
 			$('.emotion-area').append(
@@ -51,11 +45,7 @@ $(document).ready(function(){
 		}
 	}
 	
-//	$(document).one('click' , '.emotion-Icon', function(e){
-//		ApndImgEmotion();
-//	});
-
-	$(document).on('click', function(e){
+	$(document).on('click touchend', function(e){
 		var emotionArea = $('.emotion-area');
 		
 		if (!$('.emotion-Icon').find($(e.target)).length && !$('.emotion').find($(e.target)).length && emotionArea.hasClass('ShowImotion')) {
