@@ -1215,7 +1215,7 @@ input:-webkit-autofill:focus {
 	max-height: 300px;
 	overflow: scroll;
 	margin-bottom: 5px;
-	margin-top: 3px;
+	margin-top: 5px;
 
 	scrollbar-width: none;
 	-ms-overflow-style: none;
