@@ -1214,16 +1214,14 @@ input:-webkit-autofill:focus {
 .chatroom .message-content-container {
 	max-height: 300px;
 	overflow: scroll;
-	margin-bottom: 5px;
-	margin-top: 5px;
+	margin: 5px 0px 5px 0px;
 
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 }
 
 .chatroom .message-content {
-	margin: 0px;
-	margin-top: 3px;
+	margin: 3px 0px 0px 0px;
 }
 
 .chatroom .date-container {
