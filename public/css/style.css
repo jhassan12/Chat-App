@@ -1156,6 +1156,7 @@ input:-webkit-autofill:focus {
 	background: transparent;
 	transition: all .1s linear; 
 	outline: 1px solid transparent;
+	margin: 2px;
 
 	-webkit-backface-visibility: hidden;
 }
@@ -1221,7 +1222,7 @@ input:-webkit-autofill:focus {
 
 .chatroom .message-content {
 	margin: 0px;
-	margin-top: 2px;
+	margin-top: 3px;
 }
 
 .chatroom .date-container {
