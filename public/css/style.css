@@ -1221,6 +1221,7 @@ input:-webkit-autofill:focus {
 
 .chatroom .message-content {
 	margin: 0px;
+	margin-top: 2px;
 }
 
 .chatroom .date-container {
