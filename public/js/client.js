@@ -762,7 +762,7 @@ function getTime(date) {
 function getFullDate(date) {
 	var year = date.getFullYear();
 	var day = date.getDate();
-	var month = date.getMonth();
+	var month = date.getMonth() + 1;
 
 	year %= (Math.floor(year / 1000) * 1000);
 

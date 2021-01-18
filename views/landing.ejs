@@ -21,6 +21,9 @@
 </body>
 
 <script type="text/javascript">
+
+	document.addEventListener('touchstart', function(){}, {passive: true});
+	
 	document.body.addEventListener('mousedown', function() {
 	  document.body.classList.add('using-mouse');
 	});
