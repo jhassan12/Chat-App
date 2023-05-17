@@ -118,8 +118,10 @@ router.get('/room', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-	req.logout();
-	res.redirect('/login');
+	req.logout(function(err) {
+		if (err) { return next(err); }
+		res.redirect('/login');
+	  });
 });
 
 router.post('/login', setLoginCookie, passport.authenticate('local', {
