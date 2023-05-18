@@ -33,6 +33,6 @@ jobs:
           sudo docker run -d -e NODE_ENV=production \
           -e CONNECTION_STRING=${DB_CONNECTION_STRING} \
           -e SESSION_SECRET=${SESSION_SECRET} \
-          -e PORT=${PORT}
+          -e PORT=${PORT} \
           -p ${PORT}:${PORT} chat-app
           
