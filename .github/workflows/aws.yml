@@ -1,0 +1,28 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [dev2]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Deploy in EC2
+        env:
+            PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+            HOSTNAME : ${{ secrets.HOSTNAME  }}
+            USER_NAME : ${{ secrets.USERNAME  }}
+            
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          
+            rm -rf Chat-App &&
+            git clone git@github.com:jhassan12/Chat-App.git &&
+            cd Chat-App &&
+            docker build --no-cache -t chat-app . &&
+            docker run -d -p 5000:5000 chat-app &&
+          '
