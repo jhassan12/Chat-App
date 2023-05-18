@@ -23,13 +23,11 @@ jobs:
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           
-          rm -rf Chat-App && 
-          sudo docker rm -vf $(sudo docker ps -a -q) 2> /dev/null &&
-          sudo docker rmi -f $(sudo docker images -a -q) 2> /dev/null &&
-          sudo docker system prune -a -f &&
-          git clone git@github.com:jhassan12/Chat-App.git &&
-          cd Chat-App &&
-          sudo docker build --no-cache -t chat-app . &&
+          rm -rf Chat-App 
+          sudo docker system prune -a -f 
+          git clone git@github.com:jhassan12/Chat-App.git 
+          cd Chat-App 
+          sudo docker build --no-cache -t chat-app . 
           sudo docker run -d -e NODE_ENV=production \
           -e CONNECTION_STRING=${DB_CONNECTION_STRING} \
           -e SESSION_SECRET=${SESSION_SECRET} \
