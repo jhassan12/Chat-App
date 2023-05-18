@@ -24,8 +24,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
           
           rm -rf Chat-App &&
-          sudo docker rm -vf $(docker ps -aq) &&
-          docker rmi -f $(docker images -aq) &&
+          sudo docker rm -vf $(sudo docker ps -a -q) &&
+          sudo docker rmi -f $(sudo docker images -a -q) &&
           git clone git@github.com:jhassan12/Chat-App.git &&
           cd Chat-App &&
           sudo docker build --no-cache -t chat-app . &&
