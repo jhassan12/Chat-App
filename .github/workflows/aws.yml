@@ -23,6 +23,6 @@ jobs:
             rm -rf Chat-App &&
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
-            docker build --no-cache -t chat-app . &&
-            docker run -d -p 5000:5000 chat-app
+            sudo docker build --no-cache -t chat-app . &&
+            sudo docker run -d -p 5000:5000 chat-app
           '
