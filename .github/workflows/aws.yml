@@ -29,8 +29,8 @@ jobs:
             rm -rf Chat-App &&
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
+            git checkout dev2 &&
             npm install &&
-            npm audit fix &&
             node app.js
             '
           
