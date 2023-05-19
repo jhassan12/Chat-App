@@ -30,6 +30,7 @@ jobs:
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
             npm install &&
+            npm audit fix &&
             node app.js
             '
           
