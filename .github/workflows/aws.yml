@@ -33,6 +33,8 @@ jobs:
             echo "$SESSION_SECRET" > test1.txt &&
             echo "$DB_CONNECTION_STRING" > test2.txt &&
             echo "$USER_NAME" > test3.txt &&
+            echo "$HOSTNAME" > test4.txt &&
+            echo ${USER_NAME} > test5.txt &&
             
             sudo docker build -t chat-app . &&
             sudo docker run -d -e NODE_ENV=production \
