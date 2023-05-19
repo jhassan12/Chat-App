@@ -21,11 +21,12 @@ jobs:
       
         run: |
             echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-            printf "export CONNECTION_STRING=$CONNECTION_STRING\nexport SESSION_SECRET=$SESSION_SECRET\nexport PORT=$PORT" > populate_env
+            printf "export CONNECTION_STRING="$CONNECTION_STRING"\nexport SESSION_SECRET=$SESSION_SECRET\nexport PORT=$PORT" > populate_env
             scp -o StrictHostKeyChecking=no -i private_key populate_env ${USERNAME}@${HOSTNAME}:~/
             ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
           
             source ./populate_env &&
+            rm ./populate_env &&
             rm -rf Chat-App &&
             sudo docker ps -q -a --filter ancestor="chat-app" | xargs -r sudo docker rm -f &&
             sudo docker system prune -a -f &&
