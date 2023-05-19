@@ -27,9 +27,15 @@ jobs:
           
             source ./populate_env &&
             rm -rf Chat-App &&
+            sudo docker ps -q -a --filter ancestor="chat-app" | xargs -r sudo docker rm -f &&
+            sudo docker system prune -a -f &&
             git clone -b dev2 git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
-            npm install &&
-            node app.js
+            sudo docker build -t chat-app . &&
+            sudo docker run -d -e NODE_ENV=production \
+            -e CONNECTION_STRING=${CONNECTION_STRING} \
+            -e SESSION_SECRET=${SESSION_SECRET} \
+            -e PORT=${PORT} \
+            -p ${PORT}:${PORT} chat-app
             '
           
