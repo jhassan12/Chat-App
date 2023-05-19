@@ -9,38 +9,36 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2 
+      - uses: actions/checkout@v2           
       - name: Deploy in EC2
         env:
             PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
             HOSTNAME : ${{ secrets.HOSTNAME  }}
-            USER_NAME : ${{ secrets.USERNAME  }}
+            USERNAME : ${{ secrets.USERNAME  }}
             DB_CONNECTION_STRING : ${{ secrets.DB_CONNECTION_STRING }}
             SESSION_SECRET : ${{ secrets.SESSION_SECRET }}
-            PORT : ${{ secrets.PORT }}
+            PORT : ${{ PORT }}
       
         run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
+          
+            echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+
+            printf "NODE_ENV=production\nCONNECTION_STRING=$DB_CONNECTION_STRING\nSESSION_SECRET=$SESSION_SECRET\nPORT=$PORT" > .env
+            scp -i private_key .env ${USERNAME}@${HOSTNAME}:~/
+          
+            ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
           
             rm -rf Chat-App &&
             sudo docker ps -q -a --filter ancestor="chat-app" | xargs -r sudo docker rm -f &&
             sudo docker system prune -a -f &&
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
-            
-            echo "$PORT" > test.txt &&
-            echo "$SESSION_SECRET" > test1.txt &&
-            echo "$DB_CONNECTION_STRING" > test2.txt &&
-            echo "$USER_NAME" > test3.txt &&
-            echo "$HOSTNAME" > test4.txt &&
-            echo ${USER_NAME} > test5.txt &&
-            
             sudo docker build -t chat-app . &&
             sudo docker run -d -e NODE_ENV=production \
             -e CONNECTION_STRING=${DB_CONNECTION_STRING} \
             -e SESSION_SECRET=${SESSION_SECRET} \
             -e PORT=${PORT} \
             -p ${PORT}:${PORT} chat-app
+            '
           
           
