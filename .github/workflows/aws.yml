@@ -26,7 +26,6 @@ jobs:
             ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
           
             source ./populate_env &&
-            rm ./populate_env &&
             rm -rf Chat-App &&
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
