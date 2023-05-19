@@ -26,6 +26,7 @@ jobs:
             ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
           
             source ./populate_env &&
+            rm ./populate_env &&
             rm -rf Chat-App &&
             sudo docker ps -q -a --filter ancestor="chat-app" | xargs -r sudo docker rm -f &&
             sudo docker system prune -a -f &&
