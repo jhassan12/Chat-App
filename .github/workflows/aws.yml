@@ -10,8 +10,6 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2 
-        with:
-          ref: master
       - name: Deploy in EC2
         env:
             PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
