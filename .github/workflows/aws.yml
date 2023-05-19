@@ -24,7 +24,7 @@ jobs:
             echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
 
             printf "NODE_ENV=production\nCONNECTION_STRING=$DB_CONNECTION_STRING\nSESSION_SECRET=$SESSION_SECRET\nPORT=$PORT" > .env
-            scp -i private_key .env ${USERNAME}@${HOSTNAME}:~/
+            scp StrictHostKeyChecking=no -i private_key .env ${USERNAME}@${HOSTNAME}:~/
           
             ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
           
