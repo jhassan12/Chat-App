@@ -20,7 +20,6 @@ jobs:
             PORT : ${{ secrets.PORT }}
       
         run: |
-          echo "${PORT}" > test.txt
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
           
@@ -29,6 +28,7 @@ jobs:
             sudo docker system prune -a -f &&
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
+            echo "${PORT}" > test.txt &&
             sudo docker build -t chat-app . &&
             sudo docker run -d -e NODE_ENV=production \
             -e CONNECTION_STRING=${DB_CONNECTION_STRING} \
