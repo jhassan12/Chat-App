@@ -28,7 +28,7 @@ jobs:
             sudo docker system prune -a -f &&
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
-            echo ${DB_CONNECTION_STRING} > test.txt &&
+            echo "$HOSTNAME" > test.txt &&
             sudo docker build -t chat-app . &&
             sudo docker run -d -e NODE_ENV=production \
             -e CONNECTION_STRING=${DB_CONNECTION_STRING} \
