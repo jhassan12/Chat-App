@@ -27,8 +27,9 @@ jobs:
           
             source ./populate_env &&
             rm -rf Chat-App &&
-            git clone git@github.com:jhassan12/Chat-App.git &&
+            git clone -b dev2 git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
+            npm install &&
             node app.js
             '
           
