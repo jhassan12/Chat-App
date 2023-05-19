@@ -17,7 +17,7 @@ jobs:
             USERNAME : ${{ secrets.USERNAME  }}
             DB_CONNECTION_STRING : ${{ secrets.DB_CONNECTION_STRING }}
             SESSION_SECRET : ${{ secrets.SESSION_SECRET }}
-            PORT : ${{ PORT }}
+            PORT : ${{ secrets.PORT }}
       
         run: |
           
