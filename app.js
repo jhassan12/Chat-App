@@ -49,7 +49,7 @@ app.use(flash());
 
 sessionMiddleware = session({
     store: new MongoStore({
-        mongooseConnection: process.env.CONNECTION_STRING
+        url: process.env.CONNECTION_STRING
     }),
     secret: process.env.SESSION_SECRET,
     resave: false,
