@@ -21,7 +21,7 @@ jobs:
       
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
           
             rm -rf Chat-App &&
             sudo docker ps -q -a --filter ancestor="chat-app" | xargs -r sudo docker rm -f &&
@@ -42,5 +42,5 @@ jobs:
             -e SESSION_SECRET=${SESSION_SECRET} \
             -e PORT=${PORT} \
             -p ${PORT}:${PORT} chat-app
-          '
+          
           
