@@ -33,10 +33,10 @@ jobs:
             git clone git@github.com:jhassan12/Chat-App.git &&
             cd Chat-App &&
             sudo docker build -t chat-app . &&
-            sudo docker run -d -t \
+            sudo docker run -d \
             -e CONNECTION_STRING=${CONNECTION_STRING} \
             -e SESSION_SECRET=${SESSION_SECRET} \
-            -p 5000:5000 chat-app node app.js
+            -p 5000:5000 chat-app
             '
           
           
